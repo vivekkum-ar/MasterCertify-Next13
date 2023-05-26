@@ -8,6 +8,7 @@ import 'animate.css';
 import { useEffect, useState } from "react";
 import Image from "next/image";
 // import { start } from "repl";
+import Navbar from "./component/navbar";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -32,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
+        <Navbar></Navbar>
  {/* ------- Marking childrens here can be used to load child components ------  */}
  {/* ------- while nav and other elements from main layout remains same -------  */}
         {children}
