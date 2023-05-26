@@ -9,9 +9,27 @@ const poppins = Poppins({
   });
 
 const Navbar = () => {
+      /* ----------------- Background fade Nav effect starts here ----------------- */
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  /* ------------------ Background fade Nav effect ends here ------------------ */
   return (
-    <nav className="fixed bg-white w-full z-20 top-0 left-0 transition duration-500 ease-in-out">
+    <nav className={`fixed w-full z-20 top-0 left-0 transition duration-500 ease-in-out ${isScrolled ? 'bg-white dark:bg-gray-900 border-b-2 border-gray-300 dark:border-gray-600' : 'bg-inherit'}`}>
         <div className="flex flex-wrap items-center justify-between mx-auto p-1">
           <Link href="/" className="flex items-center">
             <Image src="/images/M.svg" className="mr-3 rounded-full border-2 border-gray-500" width={55} height={55} alt="MasterCertify Logo" />
@@ -22,7 +40,7 @@ const Navbar = () => {
               <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" /></svg>
             </button>
           <div className="hidden me-2 w-full md:block md:w-auto" id="navbar-default">
-            <ul className="transition duration-500 ease-in-out font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0">
+            <ul className={`transition duration-500 ease-in-out font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 ${isScrolled ? 'md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700' : "bg-inherit"}`}>
               <li>
                 <Link href="/home" className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</Link>
               </li>
