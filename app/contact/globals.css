@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.txt-gradient{
+  font-size: 72px;
+  background: linear-gradient(to bottom right,#005eff,#2f79f6, #5aff9c,#2f79f6, #005eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.txt-outline{
+  -webkit-text-stroke: 0.8px black;
+}
+
+.font-poppins{
+  font-family: 'Poppins', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+nav{
+  /* background: #c2e59c;   */
+/* background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  */
+/* background: linear-gradient(to right, #64b3f4, #c2e59c); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
