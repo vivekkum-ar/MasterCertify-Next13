@@ -9,7 +9,7 @@ const poppins = Poppins({
   });
 
 const Navbar = () => {
-      /* ----------------- Background fade Nav effect starts here ----------------- */
+/* ----------------- Background fade Nav effect starts here ----------------- */
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
