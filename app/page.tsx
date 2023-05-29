@@ -28,8 +28,9 @@ export default function Home() {
           />
         </div>
       </div>
+
       <div className="my-10 flex flex-col">
-        <div className="mx-20 py-6">
+        <div className="md:mx-20 sm:mx-4 py-6">
         <div className="flex flex-wrap">
   <div className="w-full md:w-1/2 lg:w-1/3 p-4">
     <div className="flex items-center mb-2  border-2 rounded-lg border-gray-300">
