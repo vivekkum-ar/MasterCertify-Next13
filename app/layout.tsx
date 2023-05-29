@@ -2,7 +2,6 @@
 // import '@/app/globals.css'
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { Alert } from "flowbite-react";
 import { Poppins } from "next/font/google";
 import 'animate.css';
 import { useEffect, useState } from "react";

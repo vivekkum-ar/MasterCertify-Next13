@@ -2,11 +2,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { Poppins } from "next/font/google";
 import Link from 'next/link';
-import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
-import SchoolRoundedIcon from '@material-ui/icons/SchoolRounded';
-import CreateRoundedIcon from '@material-ui/icons/CreateRounded';
-import WorkRoundedIcon from '@material-ui/icons/WorkRounded';
-import PhoneRoundedIcon from '@material-ui/icons/PhoneRounded';
+import { HomeRoundedIcon, SchoolRoundedIcon, CreateRoundedIcon, WorkRoundedIcon, PhoneRoundedIcon } from './iconify';
 
 
 const poppins = Poppins({
@@ -48,23 +44,23 @@ const Navbar = () => {
           <div className="hidden me-2 w-full md:block md:w-auto" id="navbar-default">
             <ul className={`transition duration-500 ease-in-out font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 ${isScrolled ? 'md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700' : "bg-inherit"}`}>
               <li>
-                <Link href="/" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none" aria-current="page"><HomeRoundedIcon className='mb-1'/> Home</Link>
+                <Link href="/" className="flex items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none" aria-current="page">{ HomeRoundedIcon} Home</Link>
               </li>
               <li>
                 <Link href="/courses">
-              <button id="dropdownDelayButton" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="100" data-dropdown-trigger="hover" className="flex items-center justify-between w-full px-4 hover:bg-gray-100 focus:bg-gray-100 md:hover:bg-transparent md:focus:bg-transparent md:border-0 md:hover:text-blue-700 md:focus:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 md:dark:focus:text-blue-500 dark:hover:bg-gray-700 dark:focus:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:focus:bg-transparent" type="button"><SchoolRoundedIcon className='mb-1 me-1.5' /> Courses <svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+              <button id="dropdownDelayButton" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="100" data-dropdown-trigger="hover" className="flex items-center justify-between w-full px-4 hover:bg-gray-100 focus:bg-gray-100 md:hover:bg-transparent md:focus:bg-transparent md:border-0 md:hover:text-blue-700 md:focus:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 md:dark:focus:text-blue-500 dark:hover:bg-gray-700 dark:focus:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:focus:bg-transparent" type="button">{SchoolRoundedIcon} Courses <svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
               </Link>
                 </li>
                 <li>
                   <Link href="/internships">
-              <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay2" data-dropdown-delay="100" data-dropdown-trigger="hover" className="flex items-center justify-between w-full px-4 hover:bg-gray-100 focus:bg-gray-100 md:hover:bg-transparent md:focus:bg-transparent md:border-0 md:hover:text-blue-700 md:focus:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 md:dark:focus:text-blue-500 dark:hover:bg-gray-700 dark:focus:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:focus:bg-transparent" type="button"><WorkRoundedIcon className='mb-1 me-1.5' /> Internships <svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+              <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay2" data-dropdown-delay="100" data-dropdown-trigger="hover" className="flex items-center justify-between w-full px-4 hover:bg-gray-100 focus:bg-gray-100 md:hover:bg-transparent md:focus:bg-transparent md:border-0 md:hover:text-blue-700 md:focus:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 md:dark:focus:text-blue-500 dark:hover:bg-gray-700 dark:focus:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:focus:bg-transparent" type="button">{WorkRoundedIcon} Internships <svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
               </Link>
                 </li>
               <li>
-                <Link href="/contact" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none"><PhoneRoundedIcon className='mb-1 me-1.5' /> Contact</Link>
+                <Link href="/contact" className="flex items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none">{PhoneRoundedIcon} Contact</Link>
               </li>
               <li>
-                <Link href="/blogs" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none"><CreateRoundedIcon className='mb-1 me-1.5' /> Blogs</Link>
+                <Link href="/blogs" className="flex items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none">{CreateRoundedIcon} Blogs</Link>
               </li>
 
             </ul>
