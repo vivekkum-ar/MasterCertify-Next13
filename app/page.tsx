@@ -16,14 +16,19 @@ export default function Home() {
   return (
     <>
       <Hero></Hero>
-      <div className="my-10 flex flex-col bg-cover" style={{ backgroundImage: `url("/images/pattern (4).svg")` }}>
-        <div className="mx-20 py-6">
+      {/* ----------------- NeuMorphism card with certification svg starts here ---------------- */}
+      <div
+        className="my-10 flex flex-col bg-cover -translate-y-20 sm:-translate-y-0"
+        style={{ backgroundImage: `url("/images/pattern (4).svg")` }}
+      >
+        <div className="mx-5 md:mx-20 py-6">
           <Neumorphcard
             Title="Elevate Your Skills with Our Certifications"
             Description="Unlock new career opportunities with industry-recognized certifications from Master Certify. Gain essential skills and stand out in your field with our comprehensive training programs and expert guidance."
           />
         </div>
       </div>
+      {/* ------------ NeuMorphism card with certification svg ends here -----------  */}
 
       <div className="my-10 flex flex-col">
         <div className="md:mx-20 sm:mx-4 py-6">

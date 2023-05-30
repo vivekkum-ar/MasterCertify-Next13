@@ -1,0 +1,39 @@
+.ripple-button {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ripple-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    animation: rippleEffect 0.5s linear;
+  }
+  
+  @keyframes rippleEffect {
+    0% {
+      opacity: 1;
+      width: 0;
+      height: 0;
+    }
+    100% {
+      opacity: 0;
+      width: 200px;
+      height: 200px;
+    }
+  }
+  
