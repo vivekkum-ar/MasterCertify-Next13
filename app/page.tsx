@@ -1,11 +1,13 @@
 'use client';
-
+// import YourComponent from "./component/aadebug";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 import Hero from "./component/hero";
 import Neumorphcard from "./component/neumorphcard";
 import {CodeIcon ,BuildIcon ,PeopleIcon ,ApartmentIcon ,LaptopIcon ,PersonIcon} from "./component/iconify";
+import Footer from "./component/footer";
 
+const data = [{"icon":CodeIcon,"title":"Cutting-edge Training Programs","description":"Get access to cutting-edge training programs that enhance your skills and knowledge in various domains."},{"icon":BuildIcon,"title":"Hands-on Project Experience","description":"Gain valuable hands-on experience by working on real-world projects that simulate industry scenarios."},{"icon":PeopleIcon,"title":"Networking Opportunities","description":"Connect with industry professionals, mentors, and like-minded individuals to expand your professional network."},{"icon":ApartmentIcon,"title":"Industry-recognized Certifications","description":"Earn industry-recognized certifications that validate your skills and enhance your career prospects."},{"icon":LaptopIcon,"title":"Exposure to Latest Technologies","description":"Stay updated with the latest technologies and trends through hands-on exposure to cutting-edge tools and platforms."},{"icon":PersonIcon,"title":"Personalized Learning Paths","description":"Tailor your learning journey with personalized learning paths designed to meet your specific career goals."}]; 
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -16,6 +18,7 @@ export default function Home() {
   return (
     <>
       <Hero></Hero>
+
       {/* ----------------- NeuMorphism card with certification svg starts here ---------------- */}
       <div
         className="my-10 flex flex-col bg-cover -translate-y-20 sm:-translate-y-0"
@@ -30,56 +33,33 @@ export default function Home() {
       </div>
       {/* ------------ NeuMorphism card with certification svg ends here -----------  */}
 
+      {/* --------------------- Why choose us grid starts here ---------------------  */}
       <div className="my-10 flex flex-col">
+        <h1 className={`this-is-title text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>Benefits</h1>
         <div className="md:mx-20 sm:mx-4 py-6">
-        <div className="flex flex-wrap">
-  <div className="w-full md:w-1/2 lg:w-1/3 p-4">
-    <div className="flex items-center mb-2  border-2 rounded-lg border-gray-300">
-      <span className="text-blue-500 text-3xl mr-2">{CodeIcon}</span>
-      <h4 className={`text-lg font-semibold ${poppins.className}`}>Cutting-edge Training Programs</h4>
-    </div>
-    <p>Get access to cutting-edge training programs that enhance your skills and knowledge in various domains.</p>
-  </div>
-  <div className="w-full md:w-1/2 lg:w-1/3 p-4">
-    <div className="flex items-center mb-2  border-2 rounded-lg border-gray-300">
-      <span className="text-blue-500 text-3xl mr-2">{BuildIcon}</span>
-      <h4 className={`text-lg font-semibold ${poppins.className}`}>Hands-on Project Experience</h4>
-    </div>
-    <p>Gain valuable hands-on experience by working on real-world projects that simulate industry scenarios.</p>
-  </div>
-  <div className="w-full md:w-1/2 lg:w-1/3 p-4">
-    <div className="flex items-center mb-2  border-2 rounded-lg border-gray-300">
-      <span className="text-blue-500 text-3xl mr-2">{PeopleIcon}</span>
-      <h4 className={`text-lg font-semibold ${poppins.className}`}>Networking Opportunities</h4>
-    </div>
-    <p>Connect with industry professionals, mentors, and like-minded individuals to expand your professional network.</p>
-  </div>
-  <div className="w-full md:w-1/2 lg:w-1/3 p-4">
-    <div className="flex items-center mb-2  border-2 rounded-lg border-gray-300">
-      <span className="text-blue-500 text-3xl mr-2">{ApartmentIcon}</span>
-      <h4 className={`text-lg font-semibold ${poppins.className}`}>Industry-recognized Certifications</h4>
-    </div>
-    <p>Earn industry-recognized certifications that validate your skills and enhance your career prospects.</p>
-  </div>
-  <div className="w-full md:w-1/2 lg:w-1/3 p-4">
-    <div className="flex items-center mb-2  border-2 rounded-lg border-gray-300">
-      <span className="text-blue-500 text-3xl mr-2">{LaptopIcon}</span>
-      <h4 className={`text-lg font-semibold ${poppins.className}`}>Exposure to Latest Technologies</h4>
-    </div>
-    <p>Stay updated with the latest technologies and trends through hands-on exposure to cutting-edge tools and platforms.</p>
-  </div>
-  <div className="w-full md:w-1/2 lg:w-1/3 p-4">
-    <div className="flex items-center mb-2  border-2 rounded-lg border-gray-300">
-      <span className="text-blue-500 text-3xl mr-2">{PersonIcon}</span>
-      <h4 className={`text-lg font-semibold ${poppins.className}`}>Personalized Learning Paths</h4>
-    </div>
-    <p>Tailor your learning journey with personalized learning paths designed to meet your specific career goals.</p>
-  </div>
-</div>
-
+          <div className="flex flex-wrap">
+             {/* ---------------------- Mapping data items to element starts here---------------------  */}
+            {data.map((item, index) => (
+              <div className="w-full md:w-1/2 lg:w-1/3 p-4" key={index}>
+                <div className="flex items-center mb-2  border-2 rounded-lg border-gray-300">
+                  <span className="text-blue-500 mr-2">
+                    {item.icon}
+                  </span>
+                  <h4 className={`text-md sm:text-lg font-semibold ${poppins.className}`}>
+                    {item.title}
+                  </h4>
+                </div>
+                <p className="text-justify">{item.description}</p>
+              </div>
+            ))}
+             {/* ---------------------- Mapping data items to element ends here---------------------  */}
+          </div>
         </div>
-        </div>
-        
+      </div>
+      {/* ---------------------- Why choose us grid ends here ----------------------  */}
+      {/* <YourComponent></YourComponent>
+       */}
+       <Footer></Footer>
     </>
   );
 }
