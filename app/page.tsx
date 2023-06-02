@@ -6,6 +6,7 @@ import Hero from "./component/hero";
 import Neumorphcard from "./component/neumorphcard";
 import {CodeIcon ,BuildIcon ,PeopleIcon ,ApartmentIcon ,LaptopIcon ,PersonIcon} from "./component/iconify";
 import Footer from "./component/footer";
+import Carousel from "./component/carousel";
 
 const data = [{"icon":CodeIcon,"title":"Cutting-edge Training Programs","description":"Get access to cutting-edge training programs that enhance your skills and knowledge in various domains."},{"icon":BuildIcon,"title":"Hands-on Project Experience","description":"Gain valuable hands-on experience by working on real-world projects that simulate industry scenarios."},{"icon":PeopleIcon,"title":"Networking Opportunities","description":"Connect with industry professionals, mentors, and like-minded individuals to expand your professional network."},{"icon":ApartmentIcon,"title":"Industry-recognized Certifications","description":"Earn industry-recognized certifications that validate your skills and enhance your career prospects."},{"icon":LaptopIcon,"title":"Exposure to Latest Technologies","description":"Stay updated with the latest technologies and trends through hands-on exposure to cutting-edge tools and platforms."},{"icon":PersonIcon,"title":"Personalized Learning Paths","description":"Tailor your learning journey with personalized learning paths designed to meet your specific career goals."}]; 
 
@@ -59,6 +60,10 @@ export default function Home() {
       {/* ---------------------- Why choose us grid ends here ----------------------  */}
       {/* <YourComponent></YourComponent>
        */}
+        <h1 className={`this-is-title mb-10 text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>
+          Testimonials
+        </h1>
+       <Carousel></Carousel>
        <Footer></Footer>
     </>
   );
