@@ -93,7 +93,7 @@ nav{
 .testimonial-content .testimonial-title{
   font-size: 16px;
   font-weight: 600;
-  margin: 0px 0 0 0;
+  /* margin: 15px 0 0 0; */
   display: inline-block;
 }
 .testimonial-content .testimonial-title small{

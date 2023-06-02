@@ -1,5 +1,4 @@
 'use client';
-// import YourComponent from "./component/aadebug";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 import Hero from "./component/hero";
@@ -12,7 +11,7 @@ const data = [{"icon":CodeIcon,"title":"Cutting-edge Training Programs","descrip
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["200", "300", "600", "800", "900"],
+  weight: ["200", "400", "600", "800", "900"],
 });
 
 export default function Home() {
