@@ -13,10 +13,10 @@ const Footer = () => {
 <footer className="bg-white dark:bg-gray-900">
         <div className="mx-auto w-full max-w-screen-xl sm:px-6 py-6 lg:py-8">
           <div className="flex-row md:flex md:justify-between">
-            <div className="drop-shadow-lg sm:filter-none mb-6 md:mb-0 grid items-center justify-center bg-gray-200 sm:bg-white border-gray-300 sm:border-0 border-y-2">
+            <div className="drop-shadow-lg sm:filter-none mb-6 md:mb-0 grid items-center justify-center md:bg-inherit border-gray-300 sm:border-0 border-y-2">
               <Link href="/" className="flex items-center">
                 <Image src="/images/M.svg" width={60} height={60} className="rounded-full mr-1" alt="MasterCertify Logo" />
-                <span className={`self-center text-xl sm:text-2xl font-semibold whitespace-nowrap dark:text-white ${poppins.className}`}>MasterCertify</span>
+                <span className={`self-center text-xl sm:text-2xl font-semibold whitespace-nowrap dark:text-white text-dark ${poppins.className}`}>MasterCertify</span>
               </Link>
             </div>
             <div className="grid grid-cols-3 gap-8 sm:gap-6 sm:grid-cols-3 mx-2 sm:mx-0">
