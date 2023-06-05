@@ -16,7 +16,7 @@ const poppins = Poppins({
 
 export default function Home() {
   return (
-    <>
+    <div className="dark:bg-gray-800">
       <Hero></Hero>
 
       {/* ----------------- NeuMorphism card with certification svg starts here ---------------- */}
@@ -35,21 +35,21 @@ export default function Home() {
 
       {/* --------------------- Why choose us grid starts here ---------------------  */}
       <div className="my-10 flex flex-col">
-        <h1 className={`this-is-title text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>Benefits</h1>
+        <h1 className={`dark:text-white bg-inherit this-is-title text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>Benefits</h1>
         <div className="md:mx-20 sm:mx-4 py-6">
           <div className="flex flex-wrap">
              {/* ---------------------- Mapping data items to element starts here---------------------  */}
             {data.map((item, index) => (
               <div className="w-full md:w-1/2 lg:w-1/3 p-4" key={index}>
-                <div className="flex items-center mb-2  border-2 rounded-lg border-gray-300">
+                <div className="flex items-center mb-2 border-2 rounded-lg border-gray-300">
                   <span className="text-blue-500 mr-2">
                     {item.icon}
                   </span>
-                  <h4 className={`text-md sm:text-lg font-semibold ${poppins.className}`}>
+                  <h4 className={`text-md sm:text-lg dark:text-gray-300 font-semibold ${poppins.className}`}>
                     {item.title}
                   </h4>
                 </div>
-                <p className="text-justify">{item.description}</p>
+                <p className="text-justify dark:text-gray-300">{item.description}</p>
               </div>
             ))}
              {/* ---------------------- Mapping data items to element ends here---------------------  */}
@@ -59,11 +59,11 @@ export default function Home() {
       {/* ---------------------- Why choose us grid ends here ----------------------  */}
       {/* <YourComponent></YourComponent>
        */}
-        <h1 className={`this-is-title mb-10 text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>
+        <h1 className={`dark:text-white bg-inherit this-is-title mb-10 text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>
           Testimonials
         </h1>
        <Carousel></Carousel>
        <Footer></Footer>
-    </>
+    </div>
   );
 }

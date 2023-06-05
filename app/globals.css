@@ -63,17 +63,17 @@ nav{
 }
 .testimonial .description{
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.7);
+  /* background-color: rgba(255, 255, 255, 0.7); */
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
   font-size: 24px;
   font-style: italic;
-  color: #000;
+  /* color: #000; */
   margin-bottom: 0;
 }
 .testimonial .testimonial-content{
   padding: 10px 15px;
-  background: #fff;
+  /* background: #fff; */
   position: absolute;
   bottom: -75px;
   right: 20px;
