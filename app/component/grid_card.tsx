@@ -8,12 +8,12 @@ const Gridcard = () => {
         <div className="md:mx-20 sm:mx-4 py-6">
         <div className="row">
         <div className="col-md-3 col-sm-6">
-          <div className="product-grid">
+          <div className="product-grid relative">
             <div className="product-image">
               <a href="#" className="image">
               <Image height={30} width={30} alt="image" src="/images/pattern (4).svg" />
               </a>
-              <span className="product-sale-label">sale!</span>
+              <span className="product-sale-label translate-x-3 translate-y-2 absolute z-2">Lorem ipsum dolor sit amet.</span>
             </div>
             <div className="product-content">
               <h3 className="title"><a href="#">Some Course</a></h3>

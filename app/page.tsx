@@ -61,14 +61,16 @@ export default function Home() {
       {/* <YourComponent></YourComponent>
        */}
         <h1 className={`dark:text-white bg-inherit this-is-title mb-10 text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>
+          Course Grid
+        </h1>
+       <Gridcard></Gridcard>
+       <Gridcard></Gridcard>
+       <Gridcard></Gridcard>
+       <Gridcard></Gridcard>
+
+        <h1 className={`dark:text-white bg-inherit this-is-title mb-10 text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>
           Testimonials
         </h1>
-
-       <Gridcard></Gridcard>
-       <Gridcard></Gridcard>
-       <Gridcard></Gridcard>
-       <Gridcard></Gridcard>
-
        <Carousel></Carousel>
        <Footer></Footer>
     </div>

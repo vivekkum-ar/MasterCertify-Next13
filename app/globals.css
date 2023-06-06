@@ -11,7 +11,7 @@
 .txt-gradient{
   font-size: 72px;
   background: linear-gradient(to bottom right,#005eff,#2f79f6, #5aff9c,#2f79f6, #005eff);
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
 }
 
@@ -31,20 +31,6 @@
   }
 }
 
-/* body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
-nav{
-  /* background: #c2e59c;   */
-/* background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  */
-/* background: linear-gradient(to right, #64b3f4, #c2e59c); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
 .newmorph{
   background: rgba( 255, 255, 255, 0.8 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -52,10 +38,6 @@ nav{
   -webkit-backdrop-filter: blur( 4px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
-}
-
-.demo{
-  /* background:#55a9ed; */
 }
 .testimonial{
   margin: 0 10px 75px;
@@ -145,7 +127,6 @@ nav{
   border: 1px solid #eee;
   box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.05);
   overflow: hidden;
-  position: relative;
 }
 .product-grid .product-image a.image{ display: block; }
 .product-grid .product-image img{ width: 100%; }
@@ -156,11 +137,12 @@ nav{
   font-weight: 600;
   text-transform: uppercase;
   padding: 5px 10px 5px 30px;
-  position: absolute;
   right: 0;
   top: 0;
   transition: all 0.3s;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  clip-path: polygon(0% 0%, 10% 42%, 0 84%, 95% 84%, 95% 100%, 100% 84%, 100% 0);
+  outline: 4px solid red;
+  /* clip-path: polygon(1% 1%, 21% 42%, 1% 82%, 85% 82%, 85% 99%, 99% 84%, 99% 1%); */
 }
 .product-grid .product-content{
   background: #fff;
