@@ -14,10 +14,10 @@ const CarouselMain = () => {
   {/* --------------------------------- Item 1 --------------------------------- */}
 <div id="testimonial-slider" className={`p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 animate__animated ${slide == 0 ? "animate__fadeInRight" : "hidden"}`}>
   <div className="testimonial">
-    <p className="dark:bg-gray-500 dark:text-gray-300 text-dark description rounded-xl">
+    <p className="bg-gray-200 text-dark dark:bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-60 dark:bg-opacity-70 border border-white dark:text-white description rounded-xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non mi eget tellus suscipit consequat et at.
     </p>
-    <div className="dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
+    <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         <img src="images/img-2.jpg" alt="" />
       </div>
@@ -27,10 +27,10 @@ const CarouselMain = () => {
     </div>
   </div>
   <div className="testimonial hidden md:block">
-    <p className="dark:bg-gray-500 dark:text-gray-300 text-dark description rounded-xl">
+    <p className="bg-gray-200 text-dark dark:bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-60 dark:bg-opacity-70 border border-white dark:text-white description rounded-xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non mi eget tellus suscipit consequat et at.
     </p>
-    <div className="dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
+    <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         <img src="images/img-2.jpg" alt="" />
       </div>
@@ -40,10 +40,10 @@ const CarouselMain = () => {
     </div>
   </div>
   <div className="testimonial hidden lg:block">
-    <p className="dark:bg-gray-500 dark:text-gray-300 text-dark description rounded-xl">
+    <p className="bg-gray-200 text-dark dark:bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-60 dark:bg-opacity-70 border border-white dark:text-white description rounded-xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non mi eget tellus suscipit consequat et at.
     </p>
-    <div className="dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
+    <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         <img src="images/img-2.jpg" alt="" />
       </div>
@@ -60,10 +60,10 @@ const CarouselMain = () => {
 {/* --------------------------------- Item 2 --------------------------------- */}
 <div id="testimonial-slider" className={`p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 animate__animated ${slide == 1 ? "animate__fadeInRight" : "hidden"}`}>
   <div className="testimonial">
-    <p className="dark:bg-gray-500 dark:text-gray-300 text-dark description rounded-xl">
+    <p className="bg-gray-200 text-dark dark:bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-60 dark:bg-opacity-70 border border-white dark:text-white description rounded-xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non mi eget tellus suscipit consequat et at.
     </p>
-    <div className="dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
+    <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         <img src="images/img-2.jpg" alt="" />
       </div>
@@ -73,10 +73,10 @@ const CarouselMain = () => {
     </div>
   </div>
   <div className="testimonial hidden md:block">
-    <p className="dark:bg-gray-500 dark:text-gray-300 text-dark description rounded-xl">
+    <p className="bg-gray-200 text-dark dark:bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-60 dark:bg-opacity-70 border border-white dark:text-white description rounded-xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non mi eget tellus suscipit consequat et at.
     </p>
-    <div className="dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
+    <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         <img src="images/img-2.jpg" alt="" />
       </div>
@@ -86,10 +86,10 @@ const CarouselMain = () => {
     </div>
   </div>
   <div className="testimonial hidden lg:block">
-    <p className="dark:bg-gray-500 dark:text-gray-300 text-dark description rounded-xl">
+    <p className="bg-gray-200 text-dark dark:bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-60 dark:bg-opacity-70 border border-white dark:text-white description rounded-xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non mi eget tellus suscipit consequat et at.
     </p>
-    <div className="dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
+    <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         <img src="images/img-2.jpg" alt="" />
       </div>
@@ -106,10 +106,10 @@ const CarouselMain = () => {
 {/* --------------------------------- Item 3 --------------------------------- */}
 <div id="testimonial-slider" className={`p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 animate__animated ${slide == 2 ? "animate__fadeInRight" : "hidden"}`}>
   <div className="testimonial">
-    <p className="dark:bg-gray-500 dark:text-gray-300 text-dark description rounded-xl">
+    <p className="bg-gray-200 text-dark dark:bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-60 dark:bg-opacity-70 border border-white dark:text-white description rounded-xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non mi eget tellus suscipit consequat et at.
     </p>
-    <div className="dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
+    <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         <img src="images/img-2.jpg" alt="" />
       </div>
@@ -119,10 +119,10 @@ const CarouselMain = () => {
     </div>
   </div>
   <div className="testimonial hidden md:block">
-    <p className="dark:bg-gray-500 dark:text-gray-300 text-dark description rounded-xl">
+    <p className="bg-gray-200 text-dark dark:bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-60 dark:bg-opacity-70 border border-white dark:text-white description rounded-xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non mi eget tellus suscipit consequat et at.
     </p>
-    <div className="dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
+    <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         <img src="images/img-2.jpg" alt="" />
       </div>
@@ -132,10 +132,10 @@ const CarouselMain = () => {
     </div>
   </div>
   <div className="testimonial hidden lg:block">
-    <p className="dark:bg-gray-500 dark:text-gray-300 text-dark description rounded-xl">
+    <p className="bg-gray-200 text-dark dark:bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-60 dark:bg-opacity-70 border border-white dark:text-white description rounded-xl">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non mi eget tellus suscipit consequat et at.
     </p>
-    <div className="dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
+    <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
         <img src="images/img-2.jpg" alt="" />
       </div>
