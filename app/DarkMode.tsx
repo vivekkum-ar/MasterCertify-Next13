@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import { DarkModeIcon, LightModeIcon } from "./component/iconify";
 // import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 
 // source code
@@ -23,14 +24,18 @@ export const DarkModeBtn = () => {
 		<div>
 			{currentTheme === "dark" ? (
 				<button
-					className="h-8 w-8 cursor-pointer text-yellow-500"
+					className="cursor-pointer text-white flex items-center text-white"
 					onClick={() => setTheme("light")}
-				>light</button>
+				>{LightModeIcon} 
+					<span className="ml-1">Light</span>
+				</button>
 			) : (
 				<button
-					className="h-8 w-8 cursor-pointer text-black"
+					className="cursor-pointer text-black flex items-center"
 					onClick={() => setTheme("dark")}
-				>Dark</button>
+				>{DarkModeIcon} 
+					<span className="ml-1">Dark</span>
+				</button>
 			)}
 		</div>
 	);
