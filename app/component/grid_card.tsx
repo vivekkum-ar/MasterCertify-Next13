@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 const Gridcard = () => {
   return (
-    <div className="my-10 flex flex-col">
+    <div className="flex flex-col">
         <div className="md:mx-10 sm:mx-4">
           <div className="product-grid relative rounded-2xl border-2 border-dark dark:bg-gray-500 dark:bg-opacity-70">
             <div className="product-image rounded-2xl">

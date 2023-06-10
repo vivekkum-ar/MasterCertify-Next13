@@ -15,7 +15,7 @@ const Carousel1 = () => {
   >
 
   {/* --------------------------------- Item 1 --------------------------------- */}
-<div id="" className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 animate__animated ${slide == 0 ? "animate__fadeInRight" : "hidden"}`}>
+<div id="" className={`mx-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 animate__animated ${slide == 0 ? "animate__fadeInRight" : "hidden"}`}>
   <div className="">
     <Gridcard></Gridcard>
   </div>
@@ -31,7 +31,7 @@ const Carousel1 = () => {
 
 
 {/* --------------------------------- Item 2 --------------------------------- */}
-<div id="" className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 animate__animated ${slide == 1 ? "animate__fadeInRight" : "hidden"}`}>
+<div id="" className={`mx-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 animate__animated ${slide == 1 ? "animate__fadeInRight" : "hidden"}`}>
   <div className="">
     <Gridcard></Gridcard>
   </div>
@@ -47,7 +47,7 @@ const Carousel1 = () => {
 
 
 {/* --------------------------------- Item 3 --------------------------------- */}
-<div id="" className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 animate__animated ${slide == 2 ? "animate__fadeInRight" : "hidden"}`}>
+<div id="" className={`mx-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 animate__animated ${slide == 2 ? "animate__fadeInRight" : "hidden"}`}>
   <div className="">
     <Gridcard></Gridcard>
   </div>

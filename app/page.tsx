@@ -23,7 +23,7 @@ export default function Home() {
 
       {/* ----------------- NeuMorphism card with certification svg starts here ---------------- */}
       <div
-        className="my-10 flex flex-col bg-cover -translate-y-20 sm:-translate-y-0"
+        className="my-0 md:my-10 flex flex-col bg-cover -translate-y-20 sm:-translate-y-0"
         style={{ backgroundImage: `url("/images/pattern (4).svg")` }}
       >
         <div className="mx-5 md:mx-20 py-6">
@@ -36,7 +36,7 @@ export default function Home() {
       {/* ------------ NeuMorphism card with certification svg ends here -----------  */}
 
       {/* --------------------- Why choose us grid starts here ---------------------  */}
-      <div className="my-10 flex flex-col">
+      <div className="my-0 md:my-10 flex flex-col">
         <h1 className={`dark:text-white bg-inherit this-is-title text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>Benefits</h1>
         <div className="md:mx-20 sm:mx-4 py-6">
           <div className="flex flex-wrap">
@@ -61,12 +61,12 @@ export default function Home() {
       {/* ---------------------- Why choose us grid ends here ----------------------  */}
       {/* <YourComponent></YourComponent>
        */}
-        <h1 className={`dark:text-white bg-inherit this-is-title mb-10 text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>
+        <h1 className={`dark:text-white bg-inherit this-is-title my-10 text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>
           Course Grid
         </h1>
         <Carousel1></Carousel1>
 
-        <h1 className={`dark:text-white bg-inherit this-is-title mb-10 text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>
+        <h1 className={`dark:text-white bg-inherit this-is-title my-10 text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>
           Testimonials
         </h1>
        <Carousel></Carousel>
