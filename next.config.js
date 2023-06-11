@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    domains: ['bestjquery.com'],
+  },
+  experimental: {
+    mdxRs: true,
+  },
+}
 
-module.exports = nextConfig
-module.exports = {
-    images: {
-      domains: ['bestjquery.com'],
-    },
-  }
+const withMDX = require('@next/mdx')()
+module.exports = withMDX(nextConfig)

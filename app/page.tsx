@@ -9,6 +9,7 @@ import Carousel from "./component/carouselTestimonial";
 import Gridcard from "./component/grid_card";
 import Carousel1 from "./component/carousel1";
 
+
 const data = [{"icon":CodeIcon,"title":"Cutting-edge Training Programs","description":"Get access to cutting-edge training programs that enhance your skills and knowledge in various domains."},{"icon":BuildIcon,"title":"Hands-on Project Experience","description":"Gain valuable hands-on experience by working on real-world projects that simulate industry scenarios."},{"icon":PeopleIcon,"title":"Networking Opportunities","description":"Connect with industry professionals, mentors, and like-minded individuals to expand your professional network."},{"icon":ApartmentIcon,"title":"Industry-recognized Certifications","description":"Earn industry-recognized certifications that validate your skills and enhance your career prospects."},{"icon":LaptopIcon,"title":"Exposure to Latest Technologies","description":"Stay updated with the latest technologies and trends through hands-on exposure to cutting-edge tools and platforms."},{"icon":PersonIcon,"title":"Personalized Learning Paths","description":"Tailor your learning journey with personalized learning paths designed to meet your specific career goals."}]; 
 
 const poppins = Poppins({
@@ -20,7 +21,6 @@ export default function Home() {
   return (
     <div className="dark:bg-gray-800">
       <Hero></Hero>
-
       {/* ----------------- NeuMorphism card with certification svg starts here ---------------- */}
       <div
         className="my-0 md:my-10 flex flex-col bg-cover -translate-y-20 sm:-translate-y-0"
