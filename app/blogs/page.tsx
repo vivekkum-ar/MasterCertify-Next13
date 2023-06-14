@@ -1,5 +1,54 @@
 import Image from "next/image";
 import { Poppins } from "next/font/google";
+import fs from "fs";
+const matter = require("gray-matter");
+import Link from "next/link";
+
+/* ------------------- Declaraing the metadata type for ts ------------------ */
+interface PostMetadata {
+  title: string;
+  date: string;
+  subtitle: string;
+  slug: string;
+}
+
+/* -------- Get posts from the posts folder and perform read using FS ------- */
+const getPostMetadata = (): PostMetadata[] => {
+  const folder = "posts/";
+  const files = fs.readdirSync(folder);
+  const markdownPosts = files.filter((file) => file.endsWith(".md"));
+
+  /* ----------------- // Get gray-matter data from each file. ---------------- */
+  const posts = markdownPosts.map((fileName) => {
+    const fileContents = fs.readFileSync(`posts/${fileName}`, "utf8");
+    const matterResult = matter(fileContents);
+    return {
+      title: matterResult.data.title,
+      date: matterResult.data.date.toString(),
+      subtitle: matterResult.data.subtitle,
+      slug: fileName.replace(".md", ""),
+    };
+  });
+
+  return posts;
+};
+
+/* ------------ Visual appearance of the posts using this format ------------ */
+const PostPreview = (props: PostMetadata) => {
+  return (
+    <div
+      className="border border-slate-300 p-4 rounded-md shadow-sm
+    bg-white"
+    >
+      <p className="text-sm text-slate-400">{props.date}</p>
+
+      <Link href={`/posts/${props.slug}`}>
+        <h2 className=" text-violet-600 hover:underline mb-4">{props.title}</h2>
+      </Link>
+      <p className="text-slate-700">{props.subtitle}</p>
+    </div>
+  );
+};
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -7,6 +56,11 @@ const poppins = Poppins({
 });
 
 export default function Home() {
+  const postMetadata = getPostMetadata();
+  const postPreviews = postMetadata.map((post) => (
+  /* ----------------- Make each post as a slug from filename ----------------- */
+    <PostPreview key={post.slug} {...post} />
+  ));
   return (
     <>
       <section className="bg-white bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] pt-5 dark:bg-gray-900 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
@@ -105,12 +159,8 @@ export default function Home() {
   </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
-          <div className="bg-gray-200 p-4">Item 1</div>
-          <div className="bg-gray-200 p-4">Item 3</div>
-          <div className="bg-gray-200 p-4">Item 6</div>
-        </div>
       </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{postPreviews}</div>
     </>
   );
 }
