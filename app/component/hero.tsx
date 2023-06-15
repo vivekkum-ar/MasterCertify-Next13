@@ -8,7 +8,16 @@ const poppins = Poppins({
   weight: ["200", "400", "600", "800", "900"],
 });
 
-const Hero = () => {
+interface HeroComponentProps{
+  title?: string;
+  description?: string;  //Optional prop using ?
+}
+
+const Hero: React.FC<HeroComponentProps> = ({ 
+  title = "Empowering Future Leaders with Innovative Education", 
+  description = "We empower aspiring individuals with transformative learning experiences, fostering their growth and preparing them for a promising future in the ever-evolving professional landscape." 
+}) => {
+
   return (
     <section className="bg-white bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] pt-5 dark:bg-gray-900 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
       <div className="relative z-10 mx-auto max-w-screen-xl px-4 py-8 text-center lg:py-16">
@@ -27,14 +36,12 @@ const Hero = () => {
         <h1
           className={`mb-4 text-center text-3xl font-bold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl ${poppins.className}`}
         >
-          Empowering Future Leaders with Innovative Education
+          {title}
         </h1>
         <p
           className={`mb-8 text-justify text-md sm:text-lg font-normal text-gray-500 dark:text-gray-200 sm:px-16 lg:px-48 lg:text-xl ${poppins.className}`}
         >
-          We empower aspiring individuals with transformative learning
-          experiences, fostering their growth and preparing them for a promising
-          future in the ever-evolving professional landscape.
+          {description}
         </p>
         <form className="mx-auto w-full max-w-md">
           <label
