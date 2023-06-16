@@ -1,9 +1,18 @@
 import React from 'react'
 import "@/app/globals.css"
+import fs, { readFileSync } from 'fs';
+
 const page = (props: any) => {
     const slug = props.params.slug;
+
+    const getFileContent = (slug: string) =>{
+      const folder = "posts/";
+      const file = `${folder}${slug}.md`;
+      const fileContent = readFileSync(file, "utf-8");
+      return fileContent;
+    }
   return (
-    <div className='mt-20'><h1 className='text-4xl font-bold'>{slug}</h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, recusandae. Voluptatum excepturi totam eius itaque doloribus magni doloremque id in veritatis, enim magnam ut tempora temporibus laboriosam voluptas eveniet possimus iusto accusamus quidem. Animi molestiae cupiditate rerum beatae iusto possimus, maxime incidunt quam, totam architecto tempora facilis consequuntur officia dolore.</div>
+    <div className='mt-20'><h1 className='text-4xl font-bold'>{slug}</h1>{getFileContent(slug)}</div>
   )
 }
 
