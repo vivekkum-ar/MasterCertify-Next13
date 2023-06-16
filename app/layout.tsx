@@ -38,7 +38,8 @@ export default function RootLayout({
  {/* ------- while nav and other elements from main layout remains same -------  */}
         <Providers>
         <Navbar></Navbar>
-          {children}</Providers>
+          {children}
+          </Providers>
         {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script> */}
       </body>
     </html>

@@ -13,7 +13,7 @@ In this post, I'll be discussing why you should try your hand at retro-game deve
 
 ![images/pico-8 demo](/images/jelpi_demo.gif)
 
-## Why you should build a retro game
+# Why you should build a retro game
 
 For new programmers especially, a retro game project is:
 
@@ -51,12 +51,13 @@ You only have a palette of `16` colours, your canvas is `128` pixels wide and yo
 
 Comparing it to actual retro console specs, it's somewhere between a [NES](https://en.wikipedia.org/wiki/Nintendo_Entertainment_System) and an [Atari](https://en.wikipedia.org/wiki/Atari).
 
-|                    | PICO-8    | Atari     | NES       |
-| ------------------ | --------- | --------- | --------- |
-| **Year**           | 2015      | 1977      | 1985      |
-| **Resolution**     | 128 x 128 | 160 x 192 | 256 x 240 |
-| **Colors**         | 16        | 128       | 52        |
-| **Cartridge Size** | 32 kB     | 4 kB      | 128 kB    |
+|               | PICO-8      | Atari | NES       |
+| ------------- | ----------- | ----- | --------- |
+| Year          | 2015        | 1977  | 1985      |
+| Resolution    | 128 x 128   | 160 x 192 | 256 x 240 |
+| Colors        | 16          | 128   | 52        |
+| Cartridge Size| 32 kB       | 4 kB  | 128 kB    |
+
 
 ## Code examples
 
@@ -67,14 +68,15 @@ Here's a couple of snippets of PICO-8 code to give you an idea of what developme
 The first thing to note is that the game has a special function called `_update()` which is invoked at 30 FPS. This will probably be the main driving force behind your game logic. In this snippet, we create a variable `f`, which increases by `1` each update — effectively counting the number of frames since the game loaded.
 
 ```lua
--- this is a global variable
+// this is a global variable
 f = 0
 
--- this is a special function that pico-8 invokes 30 times per second.
+// this is a special function that pico-8 invokes 30 times per second.
 function _update()
     f += 1
 end
 ```
+
 
 ### Rendering a sprite
 
@@ -89,8 +91,8 @@ x = 64
 y = 64
 
 function _draw()
-  cls(0) -- clear the screen and set it to color 0 (black).
-  spr(1, x, y) -- draw the sprite ID 1 at (x, y)
+  cls(0) // clear the screen and set it to color 0 (black).
+  spr(1, x, y) // draw the sprite ID 1 at (x, y)
 end
 ```
 
@@ -108,8 +110,8 @@ Adding this snippet to the rendering one above will allow us to move the charact
 
 ```lua
 function _update()
-  if btn(0) then x -= 2 end -- move left
-  if btn(1) then x -+ 2 end -- move right
+  if btn(0) then x -= 2 end // move left
+  if btn(1) then x -+ 2 end // move right
 end
 ```
 
