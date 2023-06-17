@@ -4,7 +4,6 @@ import { Poppins } from "next/font/google";
 import Hero from "./component/hero";
 import Neumorphcard from "./component/neumorphcard";
 import {CodeIcon ,BuildIcon ,PeopleIcon ,ApartmentIcon ,LaptopIcon ,PersonIcon} from "./component/iconify";
-import Footer from "./component/footer";
 import Carousel from "./component/carouselTestimonial";
 import Gridcard from "./component/grid_card";
 import Carousel1 from "./component/carousel1";
@@ -70,7 +69,6 @@ export default function Home() {
           Testimonials
         </h1>
        <Carousel></Carousel>
-       <Footer></Footer>
     </div>
   );
 }

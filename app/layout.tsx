@@ -10,6 +10,7 @@ import Image from "next/image";
 import Navbar from "./component/navbar";
 import Head from "next/head";
 import { Providers } from './providers';
+import Footer from "./component/footer";
 
 /* -------------------------- Font poppins setting -------------------------- */
 const poppins = Poppins({
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Providers>
         <Navbar></Navbar>
           {children}
+          <Footer></Footer>          
           </Providers>
         {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script> */}
       </body>
