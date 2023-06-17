@@ -17,7 +17,7 @@ const page = (props: any) => {
     
   return (<>
   <div className="grid justify-items-center grid-cols-1">
-    <div className="prose lg:prose-2xl"><h1 className='text-4xl font-bold'>{slug}</h1>
+    <div className="mt-20 text-justify prose lg:prose-xl md:prose-xl"><h1 className='text-4xl text-center font-bold'>{slug}</h1>
     <Markdown>
   {content}
 </Markdown>
