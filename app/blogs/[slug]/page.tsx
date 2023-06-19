@@ -13,6 +13,14 @@ const matter = require("gray-matter");
       return matterResult;
     };
     
+/* -------------- SSG(Static Site Generation) for all MD files -------------- */
+    export const generateStaticParams = async () => {
+      const posts = getPostMetadata();
+      return posts.map((post) => ({
+        slug: post.slug,
+      }));
+    };
+    
     const PostPage = (props: any) => {
 /* ----------- Collecting slug from the link used for redirection ----------- */
       const slug = props.params.slug;
