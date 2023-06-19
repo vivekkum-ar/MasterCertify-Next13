@@ -2,29 +2,32 @@ import React from 'react'
 // import "@/app/globals.css"
 import fs, { readFileSync } from 'fs';
 import Markdown from 'markdown-to-jsx';
-const page = (props: any) => {
-    
-    const getFileContent = (slug: string) =>{
-        const folder = "posts/";
-        const file = `${folder}${slug}.md`;
-        const fileContent = readFileSync(file, "utf-8");
-        return fileContent;
-      }
+import getPostMetadata from '@/app/component/getPostMetadata';
+const matter = require("gray-matter");
 
-    const slug = props.params.slug;
-    const content = getFileContent(slug);
-
+    const getPostContent = (slug: string) => {
+      const folder = "posts/";
+      const file = `${folder}${slug}.md`;
+      const content = fs.readFileSync(file, "utf8");
+      const matterResult = matter(content);
+      return matterResult;
+    };
     
-  return (<>
+    const PostPage = (props: any) => {
+/* ----------- Collecting slug from the link used for redirection ----------- */
+      const slug = props.params.slug;
+/* --------- using the getPostContent from above to get matterResult -------- */
+      const post = getPostContent(slug);
+      return (<>
   <div className="grid justify-items-center grid-cols-1">
-    <div className="mt-20 text-justify prose lg:prose-xl md:prose-xl"><h1 className='text-4xl text-center font-bold'>{slug}</h1>
+    <div className="mt-20 text-justify prose lg:prose-xl md:prose-md dark:text-white"><h1 className='text-4xl text-center font-bold'>{post.data.title}</h1>
     <Markdown>
-  {content}
+  {post.content}
 </Markdown>
     </div>
     </div>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default PostPage

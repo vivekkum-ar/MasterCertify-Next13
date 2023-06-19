@@ -19,7 +19,7 @@ const CarouselMain = () => {
     </p>
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
-        <img src="images/img-2.jpg" alt="" />
+        <Image width={40} height={40} src="/images/img-2.jpg" alt="" />
       </div>
       <h3 className="testimonial-title mt-4">Williamson
         <small>Web Designer</small>
@@ -32,7 +32,7 @@ const CarouselMain = () => {
     </p>
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
-        <img src="images/img-2.jpg" alt="" />
+        <Image width={40} height={40} src="/images/img-2.jpg" alt="" />
       </div>
       <h3 className="testimonial-title mt-4">Williamson
         <small>Web Designer</small>
@@ -45,7 +45,7 @@ const CarouselMain = () => {
     </p>
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
-        <img src="images/img-2.jpg" alt="" />
+        <Image width={40} height={40} src="/images/img-2.jpg" alt="" />
       </div>
       <h3 className="testimonial-title mt-4">kristiana
         <small>Web Developer</small>
@@ -65,7 +65,7 @@ const CarouselMain = () => {
     </p>
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
-        <img src="images/img-2.jpg" alt="" />
+        <Image width={40} height={40} src="/images/img-2.jpg" alt="" />
       </div>
       <h3 className="testimonial-title mt-4">Williamson
         <small>Web Designer</small>
@@ -78,7 +78,7 @@ const CarouselMain = () => {
     </p>
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
-        <img src="images/img-2.jpg" alt="" />
+        <Image width={40} height={40} src="/images/img-2.jpg" alt="" />
       </div>
       <h3 className="testimonial-title mt-4">Williamson
         <small>Web Designer</small>
@@ -91,7 +91,7 @@ const CarouselMain = () => {
     </p>
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
-        <img src="images/img-2.jpg" alt="" />
+        <Image width={40} height={40} src="/images/img-2.jpg" alt="" />
       </div>
       <h3 className="testimonial-title mt-4">kristiana
         <small>Web Developer</small>
@@ -111,7 +111,7 @@ const CarouselMain = () => {
     </p>
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
-        <img src="images/img-2.jpg" alt="" />
+        <Image width={40} height={40} src="/images/img-2.jpg" alt="" />
       </div>
       <h3 className="testimonial-title mt-4">Williamson
         <small>Web Designer</small>
@@ -124,7 +124,7 @@ const CarouselMain = () => {
     </p>
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
-        <img src="images/img-2.jpg" alt="" />
+        <Image width={40} height={40} src="/images/img-2.jpg" alt="" />
       </div>
       <h3 className="testimonial-title mt-4">Williamson
         <small>Web Designer</small>
@@ -137,7 +137,7 @@ const CarouselMain = () => {
     </p>
     <div className="bg-white dark:bg-gray-700 dark:text-gray-300 text-dark testimonial-content rounded-xl">
       <div className="pic">
-        <img src="images/img-2.jpg" alt="" />
+        <Image width={40} height={40} src="/images/img-2.jpg" alt="" />
       </div>
       <h3 className="testimonial-title mt-4">kristiana
         <small>Web Developer</small>
