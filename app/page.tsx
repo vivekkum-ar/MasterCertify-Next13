@@ -18,7 +18,7 @@ const poppins = Poppins({
 
 export default function Home() {
   return (
-    <div className="dark:bg-gray-800">
+    <div className="dark:bg-gray-900">
       <Hero></Hero>
       {/* ----------------- NeuMorphism card with certification svg starts here ---------------- */}
       <div

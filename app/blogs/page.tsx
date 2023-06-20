@@ -23,7 +23,7 @@ export default function Home() {
       description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic numquam voluptatem dolore quisquam voluptas qui dignissimos eligendi officiis distinctio saepe."></Hero>
       
       {/* ---------------------------- Posts using fetch --------------------------- */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-20">{postPreviews}</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-36 dark:bg-gray-900">{postPreviews}</div>
     </>
   );
 }

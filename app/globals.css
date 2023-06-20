@@ -146,14 +146,14 @@
 }
 .product-grid .product-content{
   /* background: #fff; */
-  padding: 15px;
+  /* padding: 15px; */
 }
 .product-grid .title{
   /* font-family: 'Poppins', sans-serif; */
   font-size: 18px;
   /* text-transform: uppercase; */
   letter-spacing: 1px;
-  margin: 0 0 5px;
+  /* margin: 0 0 5px; */
 }
 .product-grid .title a{
   /* color: #333; */
@@ -186,4 +186,16 @@
 }
 @media screen and (max-width: 990px){
   .product-grid{ margin-bottom: 30px; }
+}
+
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }
