@@ -27,8 +27,8 @@ const matter = require("gray-matter");
 /* --------- using the getPostContent from above to get matterResult -------- */
       const post = getPostContent(slug);
       return (<>
-  <div className="grid justify-items-center grid-cols-1">
-    <div className="mt-20 text-justify prose lg:prose-xl md:prose-md dark:text-white"><h1 className='text-4xl text-center font-bold'>{post.data.title}</h1>
+  <div className="grid justify-items-center grid-cols-1 dark:bg-gray-800">
+    <div className="mt-20 text-justify dark:prose-invert prose lg:prose-xl md:prose-md dark:text-white"><h1 className='text-4xl text-center font-bold'>{post.data.title}</h1>
     <Markdown>
   {post.content}
 </Markdown>
