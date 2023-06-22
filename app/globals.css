@@ -133,7 +133,7 @@
 .product-grid .product-sale-label{
   color: #fff;
   background: #538167;
-  font-size: 14px;
+  /* font-size: 14px; */
   font-weight: 600;
   text-transform: uppercase;
   padding: 5px 10px 5px 30px;

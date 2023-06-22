@@ -9,7 +9,13 @@ const poppins = Poppins({
   weight: ["200", "400", "600", "800", "900"],
 });
 
-const Gridcard = () => {
+interface Props {
+  // Add your prop types here
+  courseTitle:string;
+  courseDes:string;
+}
+
+const Gridcard: React.FC<Props> = ({courseTitle,courseDes}) => {
   return (
     <div className="flex flex-col">
         <div className="md:mx-10 sm:mx-4">
@@ -18,11 +24,11 @@ const Gridcard = () => {
               <a href="#" className="image">
               <Image height={100} width={100} alt="image" src="/images/pattern (4).svg" />
               </a>
-              <span className="product-sale-label translate-x-3 translate-y-2 absolute z-2">Lorem ipsum dolor.</span>
+              <span className="product-sale-label text-xs md:text-base translate-x-3 translate-y-2 absolute z-2">Lorem ipsum dolor.</span>
             </div>
             <div className="product-content rounded-b-2xl dark:text-white p-1 md:p-3">
-              <h4 className={`title font-semibold ${poppins.className}`}><a href="#" className='dark:text-white text-sm md:text-lg py-0'>Some Course</a></h4>
-              <h4 className="description text-justify dark:text-white text-xs md:text-base md:pb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus necessitatibus nesciunt officiis iste eligendi voluptate architecto aliquam at et quod. Consequuntur cum officia mollitia sit?</h4>
+              <h4 className={`title font-semibold ${poppins.className}`}><a href="#" className='dark:text-white text-sm md:text-lg py-0'>{courseTitle}</a></h4>
+              <h4 className="description text-justify dark:text-white text-xs md:text-base md:pb-2">{courseDes}</h4>
               {/* <div className="price"><span>$80.00</span> $56.00 </div> */}
               <a className={`hidden md:inline-flex add-cart rounded-lg w-full md:w-auto md:mx-2 dark:text-white flex sm:inline-flex justify-center items-center py-0 my-1 md:my-0 md:py-2.5 px-0 md:px-5 text-xs md:text-base font-medium text-center text-gray-300 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 ${poppins.className}`} href="#"> 
               Read More <span className='mr-1'>{HomeScreenRounded}</span>
