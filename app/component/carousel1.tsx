@@ -10,7 +10,7 @@ const data = [ [ { "Course Name": "Intro to Data Structures", "Course Descriptio
 
 const Carousel1 = () => {
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()])
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [])
 
   useEffect(() => {
     if (emblaApi) {

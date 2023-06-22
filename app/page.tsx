@@ -3,10 +3,11 @@ import Image from "next/image";
 import { Poppins } from "next/font/google";
 import Hero from "./component/hero";
 import Neumorphcard from "./component/neumorphcard";
-import {CodeIcon ,BuildIcon ,PeopleIcon ,ApartmentIcon ,LaptopIcon ,PersonIcon} from "./component/iconify";
+import {CodeIcon ,BuildIcon ,PeopleIcon ,ApartmentIcon ,LaptopIcon ,PersonIcon, MoreIcon} from "./component/iconify";
 import Carousel from "./component/carouselTestimonial";
 import Gridcard from "./component/grid_card";
 import Carousel1 from "./component/carousel1";
+import Link from "next/link";
 
 
 const data = [{"icon":CodeIcon,"title":"Cutting-edge Training Programs","description":"Get access to cutting-edge training programs that enhance your skills and knowledge in various domains."},{"icon":BuildIcon,"title":"Hands-on Project Experience","description":"Gain valuable hands-on experience by working on real-world projects that simulate industry scenarios."},{"icon":PeopleIcon,"title":"Networking Opportunities","description":"Connect with industry professionals, mentors, and like-minded individuals to expand your professional network."},{"icon":ApartmentIcon,"title":"Industry-recognized Certifications","description":"Earn industry-recognized certifications that validate your skills and enhance your career prospects."},{"icon":LaptopIcon,"title":"Exposure to Latest Technologies","description":"Stay updated with the latest technologies and trends through hands-on exposure to cutting-edge tools and platforms."},{"icon":PersonIcon,"title":"Personalized Learning Paths","description":"Tailor your learning journey with personalized learning paths designed to meet your specific career goals."}]; 
@@ -61,8 +62,43 @@ export default function Home() {
       {/* <YourComponent></YourComponent>
        */}
         <h1 className={`dark:text-white bg-inherit this-is-title my-10 text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>
-          Course Grid
+          Courses
         </h1>
+        <Carousel1></Carousel1>
+        <div className="w-full inline-flex items-center justify-between md:px-14 px-4">
+        <h1 className={`text-gray-800 text-left dark:text-white bg-inherit my-10 text-lg md:text-2xl lg:text-2xl font-semibold ${poppins.className}`}>
+          Master's in Business Application
+        </h1>
+        <Link href="/" className={`inline-flex ${poppins.className} hover:text-blue-700`}>View all <span className="ml-2">{MoreIcon}</span></Link>
+        </div>
+        <Carousel1></Carousel1>
+        <div className="w-full inline-flex items-center justify-between md:px-14 px-4">
+        <h1 className={`text-gray-800 text-left dark:text-white bg-inherit my-10 text-lg md:text-2xl lg:text-2xl font-semibold ${poppins.className}`}>
+          Data Science
+        </h1>
+        <Link href="/" className={`inline-flex ${poppins.className} hover:text-blue-700`}>View all <span className="ml-2">{MoreIcon}</span></Link>
+        </div>
+        <Carousel1></Carousel1>
+        <div className="w-full inline-flex items-center justify-between md:px-14 px-4">
+        <h1 className={`text-gray-800 text-left dark:text-white bg-inherit my-10 text-lg md:text-2xl lg:text-2xl font-semibold ${poppins.className}`}>
+          Data Science
+        </h1>
+        <Link href="/" className={`inline-flex ${poppins.className} hover:text-blue-700`}>View all <span className="ml-2">{MoreIcon}</span></Link>
+        </div>
+        <Carousel1></Carousel1>
+        <div className="w-full inline-flex items-center justify-between md:px-14 px-4">
+        <h1 className={`text-gray-800 text-left dark:text-white bg-inherit my-10 text-lg md:text-2xl lg:text-2xl font-semibold ${poppins.className}`}>
+          Data Science
+        </h1>
+        <Link href="/" className={`inline-flex ${poppins.className} hover:text-blue-700`}>View all <span className="ml-2">{MoreIcon}</span></Link>
+        </div>
+        <Carousel1></Carousel1>
+        <div className="w-full inline-flex items-center justify-between md:px-14 px-4">
+        <h1 className={`text-gray-800 text-left dark:text-white bg-inherit my-10 text-lg md:text-2xl lg:text-2xl font-semibold ${poppins.className}`}>
+          Data Science
+        </h1>
+        <Link href="/" className={`inline-flex ${poppins.className} hover:text-blue-700`}>View all <span className="ml-2">{MoreIcon}</span></Link>
+        </div>
         <Carousel1></Carousel1>
 
         <h1 className={`dark:text-white bg-inherit this-is-title my-10 text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>
