@@ -24,17 +24,17 @@ export const DarkModeBtn = () => {
 		<div>
 			{currentTheme === "dark" ? (
 				<button
-					className="cursor-pointer text-white flex items-center text-white"
+					className="cursor-pointer flex items-center text-white"
 					onClick={() => setTheme("light")}
 				>{LightModeIcon} 
-					<span className="ml-1">Light</span>
+					<span className="m-0 md:ml-1 hidden md:block">Light</span>
 				</button>
 			) : (
 				<button
 					className="cursor-pointer text-black flex items-center"
 					onClick={() => setTheme("dark")}
 				>{DarkModeIcon} 
-					<span className="ml-1">Dark</span>
+					<span className="m-0 md:ml-1 hidden md:block">Dark</span>
 				</button>
 			)}
 		</div>
