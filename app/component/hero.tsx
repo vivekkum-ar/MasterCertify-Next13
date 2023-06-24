@@ -2,6 +2,47 @@ import React from "react";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import "./component.module.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".hero-card-1", {
+  scrollTrigger: {
+    trigger: ".hero-card-1",
+    start: "top 80%",
+    end: "bottom 50%",
+    toggleActions: "play none none none",
+    scrub: 1,
+    // markers: true,
+  },
+  x: 400,
+  duration: 3,
+});
+
+gsap.from(".hero-card-2", {
+  scrollTrigger: {
+    trigger: ".hero-card-1",
+    start: "top 80%",
+    end: "bottom 50%",
+    toggleActions: "play none none none",
+    scrub: 1,
+  },
+  x: 400,
+  duration: 3,
+});
+
+gsap.from(".hero-card-3", {
+  scrollTrigger: {
+    trigger: ".hero-card-1",
+    start: "top 80%",
+    end: "bottom 50%",
+    toggleActions: "play none none none",
+    scrub: 1,
+  },
+  x: -400,
+  duration: 3,
+});
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,7 +70,7 @@ const Hero: React.FC<HeroComponentProps> = ({
             New
           </span>
           <span className="text-sm sm:text-md font-normal sm:font-semibold">
-            Jumbotron component was launched! See what`&apos;`s new
+            Jumbotron component was launched! See what&apos;s new
           </span>
           <svg aria-hidden="true" className="ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" > <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" /> </svg>
         </a>
@@ -77,7 +118,7 @@ const Hero: React.FC<HeroComponentProps> = ({
     {/* -------------------------- mirror section start -------------------------- */}
       <div className="grid sm:grid-cols-4 sm:gap-4 justify-center">
 
-        <div className="row-span-1 ms-20 sm:ms-0 flex justify-center items-center sm:translate-x-20">
+        <div className="hero-card-3 row-span-1 ms-20 sm:ms-0 flex justify-center items-center sm:translate-x-20">
           <div className="ms-4 rounded-lg border border-gray-200 bg-white p-2 shadow dark:border-gray-700 dark:bg-gray-800">
             <svg className="h-6 w-6 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" > <path fillRule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clipRule="evenodd" /> <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" /> </svg>
             <a href="#">
@@ -100,7 +141,7 @@ const Hero: React.FC<HeroComponentProps> = ({
         </div>
 
         <div className="-translate-y-20 sm:-translate-y-0">
-          <div className="me-20 sm:me-2 ms-1 sm:me-4 sm:-translate-x-1/2 sm:-translate-y-6 rounded-lg border border-gray-200 bg-white p-2 shadow dark:border-gray-700 dark:bg-gray-800">
+          <div className="hero-card-1 me-20 sm:me-2 ms-1 sm:me-4 sm:-translate-x-1/2 sm:-translate-y-6 rounded-lg border border-gray-200 bg-white p-2 shadow dark:border-gray-700 dark:bg-gray-800">
             <svg className="h-6 w-6 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" > <path fillRule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clipRule="evenodd" /> <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" /> </svg>
             <a href="#">
               <h5 className="text-md font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -112,7 +153,7 @@ const Hero: React.FC<HeroComponentProps> = ({
             </p>
           </div>
 
-          <div className="me-4 mt-4 hidden sm:block translate-y-8 rounded-lg border border-gray-200 bg-white p-2 shadow dark:border-gray-700 dark:bg-gray-800">
+          <div className="hero-card-2 me-4 mt-4 hidden sm:block translate-y-8 rounded-lg border border-gray-200 bg-white p-2 shadow dark:border-gray-700 dark:bg-gray-800">
             <svg className="h-6 w-6 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" > <path fillRule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clipRule="evenodd" /> <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" /> </svg>
             <a href="#">
               <h5 className="text-md font-semibold tracking-tight text-gray-900 dark:text-white">
