@@ -1,47 +1,11 @@
-import React from "react";
+"use client"
+import React, { useLayoutEffect } from "react";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import "./component.module.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-
-gsap.from(".hero-card-1", {
-  scrollTrigger: {
-    trigger: ".hero-card-1",
-    start: "top 80%",
-    end: "bottom 50%",
-    toggleActions: "play none none none",
-    scrub: 1,
-    // markers: true,
-  },
-  x: 400,
-  duration: 3,
-});
-
-gsap.from(".hero-card-2", {
-  scrollTrigger: {
-    trigger: ".hero-card-1",
-    start: "top 80%",
-    end: "bottom 50%",
-    toggleActions: "play none none none",
-    scrub: 1,
-  },
-  x: 400,
-  duration: 3,
-});
-
-gsap.from(".hero-card-3", {
-  scrollTrigger: {
-    trigger: ".hero-card-1",
-    start: "top 80%",
-    end: "bottom 50%",
-    toggleActions: "play none none none",
-    scrub: 1,
-  },
-  x: -400,
-  duration: 3,
-});
 
 
 const poppins = Poppins({
@@ -58,6 +22,73 @@ const Hero: React.FC<HeroComponentProps> = ({
   title = "Empowering Future Leaders with Innovative Education", 
   description = "We empower aspiring individuals with transformative learning experiences, fostering their growth and preparing them for a promising future in the ever-evolving professional landscape." 
 }) => {
+  // typically it's best to useLayoutEffect() instead of useEffect() to have React render the initial state properly from the very start.
+useLayoutEffect(() => {
+  let ctx = gsap.context(() => {
+    // all your GSAP animation code here
+    gsap.from(".hero-card-1", {
+      scrollTrigger: {
+        trigger: ".hero-card-1",
+        start: "top 80%",
+        end: "bottom 50%",
+        toggleActions: "play none none none",
+        scrub: true,
+        // markers: true,
+      },
+      x: "+200%",
+      opacity: 0,
+      // skewX: 30,
+      skewY: 30,
+      duration: 3,
+      ease: "power2.inOut",
+    });
+    
+    gsap.from(".hero-card-2", {
+      scrollTrigger: {
+        trigger: ".hero-card-1",
+        start: "top 80%",
+        end: "bottom 50%",
+        toggleActions: "play none none none",
+        scrub: 4,
+      },
+      x: 400,
+      skewY: 30,
+      opacity: 0,
+      duration: 4,
+      ease: "power2.inOut",
+    });
+    
+    gsap.from(".hero-card-3", {
+      scrollTrigger: {
+        trigger: ".hero-card-1",
+        start: "top 80%",
+        end: "bottom 50%",
+        toggleActions: "play none none none",
+        scrub: 5,
+      },
+      x: -400,
+      skewY: -30,
+      opacity: 0,
+      duration: 5,
+      ease: "power2.inOut",
+    });
+
+    gsap.from(".illustration-2",{
+      scrollTrigger: {
+        trigger: ".hero-card-1",
+        start: "top 80%",
+        end: "bottom 50%",
+        toggleActions: "play none none none",
+        scrub: 3,
+      },
+      y: 400,
+      opacity: 0,
+      duration: 3,
+      ease: "power2.inOut",
+    });
+  });
+  return () => ctx.revert(); // <- cleanup!
+}, []);
 
   return (
     <section className="bg-white bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] pt-5 dark:bg-gray-900 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
@@ -132,7 +163,7 @@ const Hero: React.FC<HeroComponentProps> = ({
           </div>
         </div>
 
-        <div className="col-span-2 grid md:-translate-y-0 -translate-y-8 justify-items-center p-2">
+        <div className="illustration-2 col-span-2 grid md:-translate-y-0 -translate-y-8 justify-items-center p-2">
           <Image width={500} height={500}
             src="/images/illustration2.svg"
             className="my-2 flex h-72 justify-self-center"

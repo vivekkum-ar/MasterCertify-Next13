@@ -67,7 +67,7 @@ export default function Home() {
         <Carousel1></Carousel1>
         <div className="w-full inline-flex items-center justify-between md:px-14 px-4">
         <h1 className={`text-gray-800 text-left dark:text-white bg-inherit my-10 text-lg md:text-2xl lg:text-2xl font-semibold ${poppins.className}`}>
-          Master's in Business Application
+          Master&apos;s in Business Application
         </h1>
         <Link href="/" className={`inline-flex ${poppins.className} hover:text-blue-700`}>View all <span className="ml-2">{MoreIcon}</span></Link>
         </div>
