@@ -10,6 +10,13 @@ import Carousel1 from "./component/carousel1";
 import Link from "next/link";
 
 
+const style = {
+  height: 300, // Set the height of the Lottie animation
+  width: 300, // Set the width of the Lottie animation (optional)
+  border: 3,
+  borderStyle: "solid",
+  borderRadius: 7,
+};
 const data = [{"icon":CodeIcon,"title":"Cutting-edge Training Programs","description":"Get access to cutting-edge training programs that enhance your skills and knowledge in various domains."},{"icon":BuildIcon,"title":"Hands-on Project Experience","description":"Gain valuable hands-on experience by working on real-world projects that simulate industry scenarios."},{"icon":PeopleIcon,"title":"Networking Opportunities","description":"Connect with industry professionals, mentors, and like-minded individuals to expand your professional network."},{"icon":ApartmentIcon,"title":"Industry-recognized Certifications","description":"Earn industry-recognized certifications that validate your skills and enhance your career prospects."},{"icon":LaptopIcon,"title":"Exposure to Latest Technologies","description":"Stay updated with the latest technologies and trends through hands-on exposure to cutting-edge tools and platforms."},{"icon":PersonIcon,"title":"Personalized Learning Paths","description":"Tailor your learning journey with personalized learning paths designed to meet your specific career goals."}]; 
 
 const poppins = Poppins({
@@ -19,7 +26,8 @@ const poppins = Poppins({
 
 export default function Home() {
   return (
-    <div className="dark:bg-gray-900">
+    <div className="dark:bg-gray-900 overflow-hidden">
+      {/* <Lottie animationData={bookLottie} loop={true}/> */}
       <Hero></Hero>
       {/* ----------------- NeuMorphism card with certification svg starts here ---------------- */}
       <div
