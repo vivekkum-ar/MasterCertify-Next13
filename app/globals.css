@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+
 .txt-gradient{
   font-size: 72px;
   background: linear-gradient(to bottom right,#005eff,#2f79f6, #5aff9c,#2f79f6, #005eff);
