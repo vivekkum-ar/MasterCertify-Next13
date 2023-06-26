@@ -1,10 +1,10 @@
-"use client";
+// "use client";
 // import '@/app/globals.css'
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import 'animate.css';
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Image from "next/image";
 // import { start } from "repl";
 import Navbar from "./component/navbar";
