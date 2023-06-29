@@ -257,7 +257,7 @@ mm.add("(min-width: 768px)", () => {
 }, []);
 
   return (
-    <section className="bg-white bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] pt-5 dark:bg-gray-900 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+    <section className="bg-white overflow-hidden bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] pt-5 dark:bg-gray-900 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
       <div className="relative h-max md:h-screen z-10 mx-auto px-0 py-8 text-center lg:py-16">
 
       <div className="target-svg absolute w-screen h-screen flex justify-between">      

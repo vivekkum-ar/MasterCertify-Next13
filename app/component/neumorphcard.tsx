@@ -13,13 +13,13 @@ const poppins = Poppins({
     Description: string;
   }
 const Neumorphcard: React.FC<NeumorphcardProps> = (props) => {
-    const { Title, Description } = props;
+    const { Title, Description } = props; //Destructuring Title, Description = props = title, description(from parent)
   return (
     <section className="newmorph ">
-        <div className="grid grid-rows-3 sm:grid-rows-1 gap-y-0 px-5 sm:grid-cols-3 sm:gap-x-8">
+        <div className="overflow-visible grid grid-rows-3 sm:grid-rows-1 gap-y-0 px-5 sm:grid-cols-3 sm:gap-x-8">
         <div style={{backgroundImage:`url("/images/ill-certificate.svg")`}} className="bg-contain border-b-2 border-gray-400 sm:border-0 bg-no-repeat bg-bottom md:bg-top md:bg-cover row-span-1 sm:row-span-0 sm:col-span-1">
           </div>
-          <Atropos className="py-0 mx-auto max-w-screen-xl row-span-2 sm:row-span-0 sm:col-span-2" alwaysActive={true}>
+          <Atropos className="py-0 mx-auto max-w-screen-xl row-span-2 sm:row-span-0 sm:col-span-2" shadow={false} commonOrigin={false}>
         <div data-atropos-offset="-1" className="">
           <div className="border border-gray-300 border-5 bg-gray-300 bg-clip-padding bg-opacity-60 backdrop-filter backdrop-blur-lg dark:bg-gray-500 dark:bg-opacity-70 dark:text-white border border-white rounded-xl md:my-4 py-4 md:p-4 px-2">
             <a href="#" data-atropos-offset="10" className="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2">
@@ -28,7 +28,7 @@ const Neumorphcard: React.FC<NeumorphcardProps> = (props) => {
               </svg>
               Tutorial
             </a>
-            <h1 data-atropos-offset="12" className={`text-gray-900 dark:text-white text-xl md:text-4xl lg:text-5xl font-bold mb-2 ${poppins.className}`}>{Title}</h1>
+            <h1 data-atropos-offset="5" className={`overflow text-gray-900 dark:text-white text-xl md:text-4xl lg:text-5xl font-bold mb-2 ${poppins.className}`}>{Title}</h1>
             <p className="text-sm md:text-lg font-normal text-gray-700 dark:text-white mb-6" data-atropos-offset="7">{Description}</p>
             <a href="#" data-atropos-offset="10" className="flex sm:inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-gray-300 rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
               Read more
