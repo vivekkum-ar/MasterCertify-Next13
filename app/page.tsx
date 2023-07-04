@@ -8,6 +8,7 @@ import Carousel from "./component/carouselTestimonial";
 import Gridcard from "./component/grid_card";
 import Carousel1 from "./component/carousel1";
 import Link from "next/link";
+import Scrollcard from "./component/scrollCard";
 
 
 const style = {
@@ -42,7 +43,7 @@ export default function Home() {
         </div>
       </div>
       {/* ------------ NeuMorphism card with certification svg ends here -----------  */}
-
+      <Scrollcard></Scrollcard>
       {/* --------------------- Why choose us grid starts here ---------------------  */}
       <div className="my-0 md:my-10 flex flex-col">
         <h1 className={`dark:text-white bg-inherit this-is-title text-3xl md:text-5xl lg:text-6xl font-bold text-center border-b-2 md:mx-36 mx-20 border-dark-400 text-md ${poppins.className}`}>Benefits</h1>
