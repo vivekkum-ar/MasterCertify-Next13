@@ -121,7 +121,20 @@ export default function Home() {
 </section>
 
        {/* ---------------------------- Posts using fetch --------------------------- */}
-       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-36 dark:bg-gray-900">{postPreviews}</div>
+       <section className="wrapper">
+  <section className="content blog">
+    <div className="container">
+      <div className="flex flex-col md:flex-row md:space-x-4">
+        <div className="w-full md:w-2/3">
+          <div className="blog_medium">
+        {postPreviews}
+        </div>
+        </div>
+      </div>
+    </div> 
+  </section>
+</section>
+       
     </>
   );
 }

@@ -3,4 +3,6 @@ export interface PostMetadata {
   date: string;
   subtitle: string;
   slug: string;
+  formattedDay: string;
+  formattedMonth: string;
 }
