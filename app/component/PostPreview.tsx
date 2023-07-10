@@ -18,8 +18,8 @@ const PostPreview = (props: PostMetadata) => {
 
     <article className="post">
               <div className="post_date">
-                <span className="day">28</span>
-                <span className="month">Nov</span>
+                <span className="day">${props.formattedDay}</span>
+                <span className="month">${props.formattedDay}</span>
               </div>
               <figure className="post_img">
                 <a href={`/blogs/${props.slug}`}>
