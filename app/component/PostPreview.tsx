@@ -18,8 +18,8 @@ const PostPreview = (props: PostMetadata) => {
 
     <article className="post">
               <div className="post_date">
-                <span className="day">${props.formattedDay}</span>
-                <span className="month">${props.formattedDay}</span>
+                <span className="day">{props.formattedDay}</span>
+                <span className="month">{props.formattedMonth}</span>
               </div>
               <figure className="post_img">
                 <a href={`/blogs/${props.slug}`}>
@@ -33,7 +33,7 @@ const PostPreview = (props: PostMetadata) => {
                   </h2>
                   <div className="metaInfo">
                     <span><i className="fa fa-user" /> By <a href={`/blogs/${props.slug}`}>Louis</a> </span>
-                    {/* <span><i className="fa fa-comments" /> <a href="#">12 Comments</a></span> */}
+                    <span><i className="fa fa-comments" /> <a href="#">{props.date}</a></span>
                   </div>
                 </div>
                 <p>
