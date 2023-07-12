@@ -12,7 +12,7 @@ const PostPreview = (props: PostMetadata) => {
                   </div>
                   <figure className="post_img">
                     <a href={`/blogs/${props.slug}`}>
-                      <img src="images/blog/blog_medium_1.png" alt="blog post" />
+                      <img src={props.image} alt="blog post" />
                     </a>
                   </figure>
                   <div className="post_content">
@@ -38,9 +38,9 @@ const PostPreview = (props: PostMetadata) => {
   else {
     return (
       <>
-        <article className="post">
+        <article className="post no_images">
                   <div className="post_date">
-                    <span className="day">else{props.formattedDay}</span>
+                    <span className="day">{props.formattedDay}</span>
                     <span className="month">{props.formattedMonth}</span>
                   </div>
                   <div className="post_content">
