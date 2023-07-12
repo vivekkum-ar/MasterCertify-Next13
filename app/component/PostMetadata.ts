@@ -5,4 +5,5 @@ export interface PostMetadata {
   slug: string;
   formattedDay: string;
   formattedMonth: string;
+  image: string;
 }
