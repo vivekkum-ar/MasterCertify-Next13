@@ -1,7 +1,8 @@
 ---
-title: My Fancy Blog Post
-author: John Doe
-date: 2023-05-26
+title: "My Fancy Blog Post"
+author: "John Doe"
+date: "2023-05-26"
+image: "https://placehold.co/212"
 ---
 
 # My Fancy Blog Post

@@ -28,7 +28,7 @@ const month = monthNames[date.getMonth()]; // Get month in "mmm" format
       slug: fileName.replace(".md", ""),
       formattedDay: day, // Add the formatted day,
       formattedMonth: month, // Add the formatted month
-      image: matterResult.data.title,
+      image: typeof(matterResult.data.image) === "undefined" ? "" : matterResult.data.image,
     };
   });
 

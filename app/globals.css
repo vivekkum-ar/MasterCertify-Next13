@@ -428,3 +428,299 @@
 .blog_medium .post_content > p {
   margin-bottom: 20px;
 }
+
+/* =================================================================== */
+/* 5. Sidebar & Sidebar Widgets
+====================================================================== */
+.sidebar .widget {
+  display: block;
+  float: left;
+  height: 100%;
+  margin-bottom: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.sidebar .widget ul.list_style{
+  padding: 0px;
+  margin: 0px;
+  float: left;
+  width: 100%;
+}
+.sidebar .widget ul.list_style li{
+  list-style:none;
+  border-bottom:1px solid #f2f2f2;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 8px 2px 8px 12px;
+}
+.sidebar .list_style li:before
+{
+  font-family: FontAwesome;
+  content: "";
+  font-size: 13px;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+.sidebar .widget ul.list_style li a {
+  color: #777;
+  font-size: 13px;
+  line-height: 20px;
+}
+.sidebar .widget ul.list_style li a:hover {
+  color:#22ACCC;
+}
+
+/* site search */
+/*------------------------------------------------------*/
+.site-search-area {
+  margin: 0px;
+  padding: 0 0 30px;
+}
+#site-searchform {
+  margin: 0;
+  padding: 0;
+}
+#site-searchform #s{
+  border: 1px solid #eee;
+  background-color: #fff;
+  width: 82%;
+  height:41px;
+  padding:5px 10px 5px 10px;
+  color: #999;
+  float: left;
+  font: normal 12px "Open sans",Helvetica,Arial,sans-serif;
+}
+#site-searchform #s:focus{
+  border: 1px solid #2DB0D0;
+  background-color: #fff;
+  width: 82%;
+  height:41px;
+  padding:5px 10px 5px 10px;
+  color: #999;
+  float: left;
+  font: normal 12px "Open sans",Helvetica,Arial,sans-serif;
+}
+#site-searchform #searchsubmit{
+  float: left;
+  width:18%;
+  height:41px;
+  cursor:pointer;
+  text-indent:-5555em;
+  line-height:100;
+  overflow:hidden;
+  /* background: #2DB0D0 url(../images/search-icon.png) no-repeat center 14px; */
+  border:0;
+  transition:all 0.4s ease-in-out;
+  -webkit-transition:all 0.4s ease-in-out;
+  -moz-transition:all 0.4s ease-in-out;
+  -ms-transition:all 0.4s ease-in-out;
+  -o-transition:all 0.4s ease-in-out;
+}
+#site-searchform #searchsubmit:hover{
+  /* background: #238AA2  url(../images/search-icon.png) no-repeat center 14px; */
+}
+.gray_border {
+  width: 100%;
+  height: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #DCDCDC;
+}
+
+ul.tags {
+  padding: 0;
+  margin: 5px 0 15px;
+  float: left;
+}
+.tags li {
+  float: left;
+  padding: 0px;
+  margin: 0px 5px 5px 0px;
+  list-style-type: none;
+  line-height: 25px;
+}
+.tags li a {
+  border: 1px solid #f2f2f2;
+  color: #909090;
+  float: left;
+  font-size: 12px;
+  padding: 3px 8px;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.tags li a:hover {
+  background-color:#2DB0D0;
+  color: #fff;
+}
+
+/* Recent Posts Widget
+====================================*/
+.links{
+  margin:0;
+  padding:0;
+}
+.links li{
+  list-style:none;
+}
+.links li::before {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 13px;
+  margin-right: 5px;
+}
+.links li a {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 22px;
+}
+.footer li a:hover{
+  color:#2DB0D0;
+}
+.links li span {
+  display: block;
+  color: #919191;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+/* Contact Widget
+====================================*/
+.contact-details-alt{padding:0;}
+.contact-details-alt li{list-style:none;}
+.contact-details-alt li p strong { color:#fff; float: left; margin: 0;font-size:12px;width:25%;}
+.contact-details li p strong { color:#666; float: left; margin: 0 5px 5px 0; }
+.contact-details-alt li {
+  margin: 0 0 5px 0;
+}
+.contact-details p,
+.contact-details a {color: #666;}
+.contact-details-alt p {
+  line-height: 18px;
+  width: 100%;
+  margin:0;
+}
+.contact-details-alt p a {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size:12px;
+}
+.contact-details-alt p a:hover {
+  color: #919191;
+}
+.contact-details-alt li i {
+  float: left;
+  font-size: 12px;
+  margin: 2px 0 0 0 ;
+  width: 15px;
+}
+
+
+/* ==================================================
+    TITLE
+================================================== */
+.carousel-intro .dividerHeading{
+  padding:45px 0 15px;
+}
+.dividerHeading h4,
+.widget_title h4
+{
+  border-bottom: 2px solid #E6EFEF;
+  font-size: 21px;
+  font-weight: normal;
+  margin-bottom: 25px;
+  padding: 0 0 10px;
+  position: relative;
+}
+
+.dividerHeading h4::before,
+.widget_title h4::before{
+  bottom: -5px;
+  content: "";
+  display: inline-block;
+  height: 9px;
+  left: 0;
+  position: absolute;
+  width: 9px;
+  border-radius: 50%;
+}
+.dividerHeading h4::after,
+.widget_title h4::after {
+  bottom: -2px;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 80px;
+}
+
+.dividerHeading h4::after,
+.dividerHeading h4::before,
+.widget_title h4::after,
+.widget_title h4::before{
+  background-color: #22ACCC;
+}
+.dividerHeading h4 span{
+  background: none repeat scroll 0 0 white;
+  display: inline-block;
+  padding-right: 7px;
+  line-height: 5px;
+  position: relative;
+  top: -11px;
+
+}
+.portfolio_single .widget_title span {
+  padding-right: 5px;
+  position: relative;
+  top:-9px;
+}
+.widget .widget_title h4 span{
+  background: none repeat scroll 0 0 white;
+  display: inline-block;
+  padding-right: 7px;
+  line-height: 5px;
+  position: relative;
+  top: -11px;
+
+}
+.dividerHeading h4 span:before,
+.widget_title h4 span:before
+{
+  margin-right:10px ;
+}
+.dividerHeading h4 span:after,
+.widget_title h4 span:after
+{
+  margin-left:10px ;
+}
+.widget_title {
+  position: relative;
+}
+.widget_title h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.footer .dividerHeading h4,
+.footer  .widget_title h4
+{
+  font-size:18px;
+  position:relative;
+  top: -8px;
+  border-color:#dfdfdf;
+}
+.footer .widget_title h4 span:before,
+.footer .widget_title h4 span:after
+{
+  color:#dfdfdf!important;
+}
+.footer .widget_title h4 span
+{
+  color:#fff;
+  padding-right:5px;
+  /*    background:#323A45;*/
+}

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PostMetadata } from "./PostMetadata";
 
 const PostPreview = (props: PostMetadata) => {
-  if(props.image === ""){
+  if(props.image !== ""){
     return (
       <>
         <article className="post">
@@ -12,7 +12,7 @@ const PostPreview = (props: PostMetadata) => {
                   </div>
                   <figure className="post_img">
                     <a href={`/blogs/${props.slug}`}>
-                      <img src={props.image} alt="blog post" />
+                      <img src={props.image} alt="alt alt" />
                     </a>
                   </figure>
                   <div className="post_content">
@@ -21,7 +21,7 @@ const PostPreview = (props: PostMetadata) => {
                         <a href={`/blogs/${props.slug}`}>{props.title}</a>
                       </h2>
                       <div className="metaInfo">
-                        <span><i className="fa fa-user" /> By <a href={`/blogs/${props.slug}`}>Louis</a> </span>
+                        <span><i className="fa fa-user" /> By <a href={`/blogs/${props.slug}`}>MasterCertify</a> </span>
                         <span><i className="fa fa-comments" /> <a href="#">{props.date}</a></span>
                       </div>
                     </div>
@@ -35,7 +35,7 @@ const PostPreview = (props: PostMetadata) => {
         </>
       );    
   }
-  else {
+  else{
     return (
       <>
         <article className="post no_images">
@@ -49,7 +49,7 @@ const PostPreview = (props: PostMetadata) => {
                         <a href={`/blogs/${props.slug}`}>{props.title}</a>
                       </h2>
                       <div className="metaInfo">
-                        <span><i className="fa fa-user" /> By <a href={`/blogs/${props.slug}`}>Louis</a> </span>
+                        <span><i className="fa fa-user" /> By <a href={`/blogs/${props.slug}`}>MasterCertify</a> </span>
                         <span><i className="fa fa-comments" /> <a href="#">{props.date}</a></span>
                       </div>
                     </div>

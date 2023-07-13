@@ -15,44 +15,11 @@ const poppins = Poppins({
 });
 
 
-export default function Home() {
+export default function Blog() {
   const postMetadata = getPostMetadata();
   const postPreviews = postMetadata.map((post) => (
     <PostPreview key={post.slug} {...post} />
   ));
-
-
-  // useLayoutEffect(() => {
-  //   let ctx = gsap.context(() => {
-  //     let mm = gsap.matchMedia();
-  //     // add a media query. When it matches, the associated function will run
-  // mm.add("(min-width: 768px)", () => {
-  //     // all your GSAP animation code here
-  //     gsap.to(".card-woman", {
-  //       scrollTrigger: {
-  //         trigger: ".card-1",
-  //         start: "top top",
-  //         end: "bottom+=200% 100%",
-  //         toggleActions: "play none none none",
-  //         scrub: 2,
-  //         // anticipatePin: 1,
-  //         pin:true,
-  //         pinSpacing:"-=40%",
-          
-  //         markers: true,
-  //       },
-  //       y: -2000,
-  //       stagger:{ 
-  //         amount: 0.2,
-  //         from: "end",
-  //       }, // 0.1 seconds between when each ".box" element starts animating
-  //       // scrub: true,
-        
-  //     });
-  //   });
-  //   return () => ctx.revert(); // <- cleanup!
-  // });
-  // }, []);
 
   return (
     <>
@@ -63,73 +30,57 @@ export default function Home() {
        */}
      <Scrollcard/>
 
-
-     <section className="wrapper">
-  <section className="content blog">
-    <div className="container">
-      <div className="flex flex-col md:flex-row md:space-x-4">
-        <div className="w-full md:w-2/3">
-          <div className="blog_medium">
-            <article className="post">
-              <div className="post_date">
-                <span className="day">28</span>
-                <span className="month">Nov</span>
-              </div>
-              <figure className="post_img">
-                <a href="#">
-                  <img src="images/blog/blog_medium_1.png" alt="blog post" />
-                </a>
-              </figure>
-              <div className="post_content">
-                <div className="post_meta">
-                  <h2>
-                    <a href="#">perferendis dolor asperio</a>
-                  </h2>
-                  <div className="metaInfo">
-                    <span><i className="fa fa-user" /> By <a href="#">Louis</a> </span>
-                    {/* <span><i className="fa fa-comments" /> <a href="#">12 Comments</a></span> */}
-                  </div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adip, sed do eiusmod tempor incididunt  ut aut reiciendise voluptat maiores alias consequaturs aut perferendis doloribus asperiores ut labore.</p>
-                <a className="btn btn-small btn-default bg-blue-500 p-2 rounded-md text-white" href="#">Read More</a>
-              </div>
-            </article>
-            <article className="post no_images">
-              <div className="post_date">
-                <span className="day">28</span>
-                <span className="month">Nov</span>
-              </div>
-              <div className="post_content">
-                <div className="post_meta">
-                  <h2>
-                    <a href="#">perferendis dolor asperio</a>
-                  </h2>
-                  <div className="metaInfo">
-                    <span><i className="fa fa-user" /> By <a href="#">Louis</a> </span>
-                    {/* <span><i className="fa fa-comments" /> <a href="#">12 Comments</a></span> */}
-                  </div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adip, sed do eiusmod tempor incididunt  ut aut reiciendise voluptat maiores alias consequaturs aut perferendis doloribus asperiores ut labore.</p>
-                <a className="btn btn-small btn-default bg-blue-500 p-2 rounded-md text-white" href="#">Read More</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div> {/*/.container*/}
-  </section>
-</section>
-
        {/* ---------------------------- Posts using fetch --------------------------- */}
        <section className="wrapper">
-  <section className="content blog">
-    <div className="container">
+  <section className="content blog mx-6 md:ms-20">
+    <div className="mx-auto">
       <div className="flex flex-col md:flex-row md:space-x-4">
-        <div className="w-full md:w-2/3">
+        <div className="w-full">
           <div className="blog_medium">
         {postPreviews}
         </div>
         </div>
+
+
+        <div className="col-span-12 md:col-span-4 lg:col-span-4 sm:col-span-4 sm:col-span-4 md:absolute md:right-0">
+        <div className="md:sticky md:top-20">
+  <div className="sidebar ">
+    
+    <div className="widget widget_categories">
+      <div className="widget_title">
+        <h4><span>Categories</span></h4>  
+      </div>
+      <ul className="arrows_list list_style">
+        <li><a href="#">Grapic Design (10)</a></li>
+        <li><a href="#">Web Design &amp; Development (25)</a></li>
+        <li><a href="#">Photography (29)</a></li>
+        <li><a href="#">Custom Illustrations (19)</a></li>
+        <li><a href="#">Wordpress Themes(38)</a></li>
+        <li><a href="#">Videography (33)</a></li>
+      </ul>
+    </div>
+    
+    
+    <div className="widget widget_archives">
+      <div className="widget_title">
+        <h4><span>Archives</span></h4>
+      </div>
+      <ul className="archives_list list_style">
+        <li><a href="#">November 2015</a></li>
+        <li><a href="#">October 2015</a></li>
+        <li><a href="#">September 2015</a></li>
+        <li><a href="#">August 2015</a></li>
+        <li><a href="#">July 2015</a></li>
+        <li><a href="#">June 2015</a></li>
+        <li><a href="#">May 2015</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
       </div>
     </div> 
   </section>
