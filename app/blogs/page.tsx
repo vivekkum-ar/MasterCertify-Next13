@@ -43,12 +43,12 @@ export default function Blog() {
 
 
         <div className="col-span-12 md:col-span-4 lg:col-span-4 sm:col-span-4 sm:col-span-4 md:absolute md:right-0">
-        <div className="md:sticky md:top-20">
+        <div className="md:sticky md:top-24">
   <div className="sidebar ">
     
     <div className="widget widget_categories">
       <div className="widget_title">
-        <h4><span>Categories</span></h4>  
+        <h4><span></span>Categories</h4>  
       </div>
       <ul className="arrows_list list_style">
         <li><a href="#">Grapic Design (10)</a></li>
@@ -63,7 +63,7 @@ export default function Blog() {
     
     <div className="widget widget_archives">
       <div className="widget_title">
-        <h4><span>Archives</span></h4>
+        <h4><span></span>Archives</h4>
       </div>
       <ul className="archives_list list_style">
         <li><a href="#">November 2015</a></li>

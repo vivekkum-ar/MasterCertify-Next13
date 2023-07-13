@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Poppins } from "next/font/google";
 // import PostPreview from "../component/PostPreview"; 
 // import getPostMetadata from "../component/getPostMetadata";
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -15,11 +15,34 @@ const poppins = Poppins({
 
 
 export default function Scrollcard() {
+
+  const [imageHeight, setImageHeight] = useState('80vh'); // Default height for larger screens
+
+  useEffect(() => {
+    // Update the image height based on screen size
+    const updateImageHeight = () => {
+      if (window.innerWidth <= 640) {
+        setImageHeight('40vh'); // Height for smaller screens
+      } else {
+        setImageHeight('80vh'); // Height for larger screens
+      }
+    };
+
+    // Call the function on initial load
+    updateImageHeight();
+
+    // Listen to window resize and update the image height accordingly
+    window.addEventListener('resize', updateImageHeight);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', updateImageHeight);
+    };
+  }, []);
   // const postMetadata = getPostMetadata();
   // const postPreviews = postMetadata.map((post) => (
   //   <PostPreview key={post.slug} {...post} />
   // ));
-
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -61,8 +84,8 @@ export default function Scrollcard() {
       description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic numquam voluptatem dolore quisquam voluptas qui dignissimos eligendi officiis distinctio saepe."></Hero>
        */}
        <div className="overflow-hidden card-1">
-       <div className="card-woman-0 absolute m-20 block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-        <Image width={1000} height={1000} style={{width:"100vw",height:"80vh" }} loading="lazy" className="rounded-lg" src="/images/woman-laptop.jpg" alt="" />
+       <div className="card-woman-0 absolute mt-20 mx-2 md:mx-20 md:m-20 block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+        <Image width={1000} height={1000} style={{width:"100vw",height:imageHeight}} loading="lazy" className="rounded-lg" src="/images/woman-laptop.jpg" alt="" />
         <div className="absolute top-0 p-6">
           <h5 className={`mb-2 text-2xl font-semibold leading-tight text-white ${poppins.className}`}>
             Card title0
@@ -76,8 +99,8 @@ export default function Scrollcard() {
         </div>
       </div>
 
-<div className="card-woman absolute m-20 block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-        <Image width={1000} height={1000} style={{width:"100vw",height:"80vh" }} loading="lazy" className="rounded-lg" src="/images/woman-laptop.jpg" alt="" />
+<div className="card-woman absolute mt-20 mx-2 md:mx-20 md:m-20 block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+        <Image width={1000} height={1000} style={{width:"100vw",height:imageHeight}} loading="lazy" className="rounded-lg" src="/images/woman-laptop.jpg" alt="" />
         <div className="absolute top-0 p-6">
           <h5 className={`mb-2 text-2xl font-semibold leading-tight text-white ${poppins.className}`}>
             Card title1
@@ -91,8 +114,8 @@ export default function Scrollcard() {
         </div>
       </div>
 
-      <div className="card-woman absolute m-20 block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-        <Image width={1000} height={1000} style={{width:"100vw",height:"80vh" }} loading="lazy" className="rounded-lg" src="/images/woman-laptop.jpg" alt="" />
+      <div className="card-woman absolute mt-20 mx-2 md:mx-20 md:m-20 block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+        <Image width={1000} height={1000} style={{width:"100vw",height:imageHeight}} loading="lazy" className="rounded-lg" src="/images/woman-laptop.jpg" alt="" />
         <div className="absolute top-0 p-6">
           <h5 className={`mb-2 text-2xl font-semibold leading-tight text-white ${poppins.className}`}>
             Card title2
@@ -106,8 +129,8 @@ export default function Scrollcard() {
         </div>
       </div>
 
-      <div className="card-woman relative m-20 block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-        <Image width={1000} height={1000} style={{width:"100vw",height:"80vh" }} loading="lazy" className="rounded-lg" src="/images/woman-laptop.jpg" alt="" />
+      <div className="card-woman relative mt-20 mx-2 md:mx-20 md:m-20 block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+        <Image width={1000} height={1000} style={{width:"100vw",height:imageHeight}} loading="lazy" className="rounded-lg" src="/images/woman-laptop.jpg" alt="" />
         <div className="absolute top-0 p-6">
           <h5 className={`mb-2 text-2xl font-semibold leading-tight text-white ${poppins.className}`}>
             Card title3
@@ -124,7 +147,7 @@ export default function Scrollcard() {
       {/* ---------------------------- Posts using fetch --------------------------- */}
       {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-36 dark:bg-gray-900">{postPreviews}</div> */}
       {/* <div className="relative rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-        <Image width={1000} height={1000} style={{width:"100vw",height:"80vh" }} loading="lazy" className="rounded-lg" src="/images/woman-laptop.jpg" alt="" />
+        <Image width={1000} height={1000} style={{width:"100vw",height:imageHeight}} loading="lazy" className="rounded-lg" src="/images/woman-laptop.jpg" alt="" />
         <div className="absolute top-0 p-6">
           <h5 className={`mb-2 text-2xl font-semibold leading-tight text-white ${poppins.className}`}>
             Card title1
