@@ -53,14 +53,13 @@ export default function Scrollcard() {
       gsap.to(".card-woman", {
         scrollTrigger: {
           trigger: ".card-1",
-          start: "top-=2% top",
+          start: "top-=0.5% top",
           end: "bottom+=500% 100%",
           toggleActions: "play none none none",
           scrub: 2,
           // anticipatePin: 1,
           pin:true,
           pinSpacing:"-=40%",
-          
           markers: true,
         },
         y: -2000,
@@ -83,7 +82,7 @@ export default function Scrollcard() {
       title="Blogs" 
       description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic numquam voluptatem dolore quisquam voluptas qui dignissimos eligendi officiis distinctio saepe."></Hero>
        */}
-       <div className="overflow-hidden card-1">
+       <div className="overflow-hidden card-1 dark:bg-gray-900">
        <div className="card-woman-0 absolute mt-20 mx-2 md:mx-20 md:m-20 block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
         <Image width={1000} height={1000} style={{width:"100vw",height:imageHeight}} loading="lazy" className="rounded-lg" src="/images/woman-laptop.jpg" alt="" />
         <div className="absolute top-0 p-6">

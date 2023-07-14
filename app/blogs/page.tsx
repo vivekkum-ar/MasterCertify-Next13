@@ -31,12 +31,12 @@ export default function Blog() {
      <Scrollcard/>
 
        {/* ---------------------------- Posts using fetch --------------------------- */}
-       <section className="wrapper">
-  <section className="content blog mx-6 md:ms-20">
+       <section className="wrapper dark:bg-gray-900">
+  <section className="content blog mx-6 ">
     <div className="mx-auto">
       <div className="flex flex-col md:flex-row md:space-x-4">
-        <div className="w-full">
-          <div className="blog_medium">
+        <div className="w-3/4">
+          <div className="blog_medium me-6">
         {postPreviews}
         </div>
         </div>

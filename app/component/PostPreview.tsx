@@ -5,7 +5,7 @@ const PostPreview = (props: PostMetadata) => {
   if(props.image !== ""){
     return (
       <>
-        <article className="post">
+        <article className="post border-b dark:border-white border-gray-800">
                   <div className="post_date">
                     <span className="day">{props.formattedDay}</span>
                     <span className="month">{props.formattedMonth}</span>
@@ -38,7 +38,7 @@ const PostPreview = (props: PostMetadata) => {
   else{
     return (
       <>
-        <article className="post no_images">
+        <article className="post no_images border-b dark:border-white border-gray-800">
                   <div className="post_date">
                     <span className="day">{props.formattedDay}</span>
                     <span className="month">{props.formattedMonth}</span>
