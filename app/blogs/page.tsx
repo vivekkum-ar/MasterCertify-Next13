@@ -28,7 +28,7 @@ export default function Blog() {
       title="Blogs" 
       description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic numquam voluptatem dolore quisquam voluptas qui dignissimos eligendi officiis distinctio saepe."></Hero>
        */}
-     <Scrollcard/>
+     {/* <Scrollcard/> */}
 
        {/* ---------------------------- Posts using fetch --------------------------- */}
        <section className="wrapper dark:bg-gray-900">

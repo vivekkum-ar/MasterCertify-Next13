@@ -405,7 +405,7 @@
 }
 .blog_medium .post_meta .metaInfo > span > a:hover{  
 --tw-bg-opacity: 1;
-    background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+  color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 .blog_medium .post_meta .metaInfo {
   font-size: 0.95em;
@@ -430,7 +430,7 @@
 .blog_medium .post_meta h2:hover a {
   /* color:#30B0D0; */
   --tw-bg-opacity: 1;
-    background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+  color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 .blog_medium .post_content > p {
   margin-bottom: 20px;

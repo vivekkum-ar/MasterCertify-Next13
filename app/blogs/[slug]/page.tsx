@@ -22,20 +22,128 @@ const matter = require("gray-matter");
     };
     
     const PostPage = (props: any) => {
-/* ----------- Collecting slug from the link used for redirection ----------- */
+      /* ----------- Collecting slug from the link used for redirection ----------- */
       const slug = props.params.slug;
-/* --------- using the getPostContent from above to get matterResult -------- */
+      /* --------- using the getPostContent from above to get matterResult -------- */
       const post = getPostContent(slug);
-      return (<>
-  <div className="grid justify-items-center grid-cols-1 dark:bg-gray-800">
-    <div className="mt-20 text-justify dark:prose-invert prose lg:prose-xl md:prose-md dark:text-white"><h1 className='text-4xl text-center font-bold'>{post.data.title}</h1>
-    <Markdown>
-  {post.content}
-</Markdown>
-    </div>
-    </div>
-    </>
-  );
-};
+
+      // Extract the day and month from the date
+      const date = new Date(post.data.date);
+      const day = date.getDate().toString().padStart(2, "0"); // Format as "dd"
+      const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ];
+      const month = monthNames[date.getMonth()]; // Get month in "mmm" format
+
+      return (
+        <>
+          <section className="wrapper dark:bg-gray-900 mt-20">
+            <section className="content blog mx-6 ">
+              <div className="mx-auto">
+                <div className="flex flex-col md:flex-row">
+                  <div className="w-full">
+                    <div className="blog_medium">
+                      {/* <div className="grid grid-cols-1 dark:bg-gray-800"> */}
+                        {/* <div className="flex-row w-full"> */}
+                          <div className="post_date">
+                            <span className="day">{day}</span>
+                            <span className="month">{month}</span>
+                          </div>
+                          <div className="post_content">
+                            <div className="post_meta">
+                              <h1 className="text-4xl text-center font-bold">
+                                {post.data.title}
+                              </h1>
+                              <div className="metaInfo">
+                                <span>
+                                  <i className="fa fa-calendar" />{" "}
+                                  <a href="#">{post.data.date}</a>{" "}
+                                </span>
+                                <span>
+                                  <i className="fa fa-user" /> By{" "}
+                                  <a href="#">MasterCertify</a>{" "}
+                                </span>
+                                {/* <span><i className="fa fa-tag" /> <a href="#">Emin</a>, <a href="#">News</a> </span> */}
+                                {/* <span><i className="fa fa-comments" /> <a href="#">12 Comments</a></span> */}
+                              </div>
+                            </div>
+                          </div>
+                        {/* </div> */}
+                        <div className="text-justify dark:prose-invert prose lg:prose-xl md:prose-md dark:text-white">
+                          <Markdown>{post.content}</Markdown>
+                        </div>
+                      {/* </div> */}
+                    </div>
+                  </div>
+
+                  <div className="col-span-12 md:col-span-4 lg:col-span-4 sm:col-span-4 sm:col-span-4 md:absolute md:right-0">
+                    <div className="md:sticky md:top-24">
+                      <div className="sidebar ">
+                        <div className="widget widget_categories">
+                          <div className="widget_title">
+                            <h4>
+                              <span></span>Categories
+                            </h4>
+                          </div>
+                          <ul className="arrows_list list_style">
+                            <li>
+                              <a href="#">Grapic Design (10)</a>
+                            </li>
+                            <li>
+                              <a href="#">Web Design &amp; Development (25)</a>
+                            </li>
+                            <li>
+                              <a href="#">Photography (29)</a>
+                            </li>
+                            <li>
+                              <a href="#">Custom Illustrations (19)</a>
+                            </li>
+                            <li>
+                              <a href="#">Wordpress Themes(38)</a>
+                            </li>
+                            <li>
+                              <a href="#">Videography (33)</a>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div className="widget widget_archives">
+                          <div className="widget_title">
+                            <h4>
+                              <span></span>Archives
+                            </h4>
+                          </div>
+                          <ul className="archives_list list_style">
+                            <li>
+                              <a href="#">November 2015</a>
+                            </li>
+                            <li>
+                              <a href="#">October 2015</a>
+                            </li>
+                            <li>
+                              <a href="#">September 2015</a>
+                            </li>
+                            <li>
+                              <a href="#">August 2015</a>
+                            </li>
+                            <li>
+                              <a href="#">July 2015</a>
+                            </li>
+                            <li>
+                              <a href="#">June 2015</a>
+                            </li>
+                            <li>
+                              <a href="#">May 2015</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </>
+      );
+    };
 
 export default PostPage
