@@ -7,7 +7,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import Scrollcard from "../component/scrollCard";
-
+import Keyword from "../component/keywords";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -39,6 +39,7 @@ export default function Blog() {
         <div className="md:w-3/4 sm:w-full">
           <div className="blog_medium md:me-6 me-0">
         {postPreviews}
+        <Keyword dictionary={["Lorem","Ipsum","is","simply","dummy","text","of","the","printing","and","typesetting","industry." ]}></Keyword>
         </div>
         </div>
 
