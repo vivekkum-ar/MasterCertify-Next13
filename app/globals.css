@@ -315,8 +315,8 @@
 }
 
 .blog_medium .post{
-  padding-bottom:50px;
-  margin-bottom:50px;
+  /* padding-bottom:50px; */
+  /* margin-bottom:50px; */
   /* border-bottom:1px solid #f2f2f2; */
 }
 .blog_medium .post_img {
@@ -383,7 +383,7 @@
 .blog_medium .post_content {
   float: left;
   margin: 0;
-  width: 50%;
+  /* width: 50%; */
 }
 .blog_medium .post.no_images .post_content {
   max-width: 88%;

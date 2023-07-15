@@ -2,6 +2,7 @@
 title: "My Fancy Blog Post"
 author: "John Doe"
 date: "2023-05-26"
+subtitle: "I used GPT-3 to generate poetry and other creative content."
 image: "https://placehold.co/212"
 ---
 

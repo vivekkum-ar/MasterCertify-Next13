@@ -35,29 +35,29 @@ const matter = require("gray-matter");
 
       return (
         <>
-          <section className="wrapper dark:bg-gray-900 mt-20">
-            <section className="content blog mx-6 ">
-              <div className="mx-auto">
+          <section className="wrapper dark:bg-gray-900 pt-8 md:pt-20">
+            <section className="content blog mx-6 flex flex-col md:flex-row">
+              <div className="mx-0 md:mx-6">
                 <div className="flex flex-col md:flex-row">
                   <div className="w-full">
-                    <div className="blog_medium">
+                    <div className="blog_medium flex flex-col">
                       {/* <div className="grid grid-cols-1 dark:bg-gray-800"> */}
-                        {/* <div className="flex-row w-full"> */}
-                          <div className="post_date">
+                        <div className="flex-row flex">
+                          <div className="post_date hidden md:block">
                             <span className="day">{day}</span>
                             <span className="month">{month}</span>
                           </div>
-                          <div className="post_content">
+                          <div className="post_content md:w-1/2 w-full">
                             <div className="post_meta">
-                              <h1 className="text-4xl text-center font-bold">
+                              <h1 className="grid text-2xl w-full md:text-4xl text-center font-bold">
                                 {post.data.title}
                               </h1>
-                              <div className="metaInfo">
-                                <span>
+                              <div className="metaInfo flex justify-center">
+                                <span className=' bg-gray-300'>
                                   <i className="fa fa-calendar" />{" "}
                                   <a href="#">{post.data.date}</a>{" "}
                                 </span>
-                                <span>
+                                <span className=' bg-gray-300'>
                                   <i className="fa fa-user" /> By{" "}
                                   <a href="#">MasterCertify</a>{" "}
                                 </span>
@@ -66,14 +66,13 @@ const matter = require("gray-matter");
                               </div>
                             </div>
                           </div>
-                        {/* </div> */}
+                        </div>
                         <div className="text-justify dark:prose-invert prose lg:prose-xl md:prose-md dark:text-white">
                           <Markdown>{post.content}</Markdown>
                         </div>
                       {/* </div> */}
                     </div>
                   </div>
-
                   <div className="col-span-12 md:col-span-4 lg:col-span-4 sm:col-span-4 sm:col-span-4 md:absolute md:right-0">
                     <div className="md:sticky md:top-24">
                       <div className="sidebar ">
@@ -138,10 +137,16 @@ const matter = require("gray-matter");
                       </div>
                     </div>
                   </div>
+                  
                 </div>
+                
               </div>
             </section>
+            
           </section>
+
+
+          
         </>
       );
     };
