@@ -25,7 +25,7 @@ interface KeywordComponentProps{
     dictionary: string[];  //Optional prop using ?
   }
 
-const Keyword: React.FC<KeywordComponentProps> = ({dictionary}) => {
+const Keyword: React.FC<KeywordComponentProps> = ({dictionary = []}) => {
 
   return (
     <div className="md:max-w-md max-w-xs">

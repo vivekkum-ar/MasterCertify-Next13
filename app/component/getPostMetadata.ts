@@ -29,6 +29,7 @@ const month = monthNames[date.getMonth()]; // Get month in "mmm" format
       formattedDay: day, // Add the formatted day,
       formattedMonth: month, // Add the formatted month
       image: typeof(matterResult.data.image) === "undefined" ? "" : matterResult.data.image,
+      keywords: matterResult.data.keywords,
     };
   });
 

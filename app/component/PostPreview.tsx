@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PostMetadata } from "./PostMetadata";
+import Keyword from "./keywords";
 
 const PostPreview = (props: PostMetadata) => {
   if(props.image !== ""){
@@ -25,7 +26,7 @@ const PostPreview = (props: PostMetadata) => {
                         <span><i className="fa fa-comments" /> <a href="#">{props.date}</a></span>
                       </div>
                     </div>
-                    
+                    <Keyword dictionary={props.keywords == undefined ? [] : props.keywords.split(",")}></Keyword>
                     <p>
                     {props.subtitle}
                       {/* Lorem ipsum dolor sit amet, consectetur adip, sed do eiusmod tempor incididunt  ut aut reiciendise voluptat maiores alias consequaturs aut perferendis doloribus asperiores ut labore. */}
@@ -54,6 +55,7 @@ const PostPreview = (props: PostMetadata) => {
                         <span><i className="fa fa-comments" /> <a href="#">{props.date}</a></span>
                       </div>
                     </div>
+                    <Keyword dictionary={props.keywords == undefined ? [] : props.keywords.split(",")}></Keyword>
                     <p>
                     {props.subtitle}
                       {/* Lorem ipsum dolor sit amet, consectetur adip, sed do eiusmod tempor incididunt  ut aut reiciendise voluptat maiores alias consequaturs aut perferendis doloribus asperiores ut labore. */}

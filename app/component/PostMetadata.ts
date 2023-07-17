@@ -6,4 +6,5 @@ export interface PostMetadata {
   formattedDay: string;
   formattedMonth: string;
   image: string;
+  keywords: string;
 }
