@@ -3,6 +3,7 @@ import React from 'react'
 import fs, { readFileSync } from 'fs';
 import Markdown from 'markdown-to-jsx';
 import getPostMetadata from '@/app/component/getPostMetadata';
+import Keyword from '@/app/component/keywords';
 const matter = require("gray-matter");
 
     const getPostContent = (slug: string) => {
@@ -76,7 +77,16 @@ const matter = require("gray-matter");
                   <div className="col-span-12 md:col-span-4 lg:col-span-4 sm:col-span-4 sm:col-span-4 md:absolute md:right-0">
                     <div className="md:sticky md:top-24">
                       <div className="sidebar ">
-                        <div className="widget widget_categories">
+                      <div className=" widget_categories md:max-w-xs max-w-xs">
+                          <div className="widget_title">
+                            <h4>
+                              <span></span>Keywords
+                            </h4>
+                          </div>
+                          <Keyword dictionary={post.data.keywords == undefined ? [] : post.data.keywords.split(",")}></Keyword>
+                        </div>
+
+                        <div className="widget widget_categories mt-4 md:mt-8">
                           <div className="widget_title">
                             <h4>
                               <span></span>Categories
