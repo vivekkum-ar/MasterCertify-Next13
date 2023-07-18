@@ -10,7 +10,6 @@ import Carousel1 from "./component/carousel1";
 import Link from "next/link";
 import Scrollcard from "./component/scrollCard";
 
-
 const style = {
   height: 300, // Set the height of the Lottie animation
   width: 300, // Set the width of the Lottie animation (optional)

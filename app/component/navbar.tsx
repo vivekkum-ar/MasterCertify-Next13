@@ -5,6 +5,7 @@ import { Poppins } from "next/font/google";
 import Link from 'next/link';
 import { HomeRoundedIcon, SchoolRoundedIcon, CreateRoundedIcon, WorkRoundedIcon, PhoneRoundedIcon, DarkModeIcon, LightModeIcon } from './iconify';
 import { DarkModeBtn } from '../DarkMode';
+import Loginform from './Loginform';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -16,6 +17,8 @@ const Navbar = () => {
 /* ---------------------- Collapse / Reopen Mobile Menu --------------------- */
   const [isMenuClicked, setIsMobMenu] = useState(true);
 
+/* ------------------------- View Loginform on click ------------------------ */
+  const [isLoginClicked, setLoginClicked] = useState(false);
 
 /* ----------------- Background fade Nav effect starts here ----------------- */
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,10 +48,11 @@ const Navbar = () => {
             <span className={`self-center lg:text-2xl sm:text-lg font-semibold text-gray-800 whitespace-nowrap dark:text-white ${poppins.className}`}>MasterCertify</span>
           </Link>
           <div className={`me-2 bg-inherit rounded-xl w-full md:w-auto md:block md:w-auto hidden md:block`}>
-      <ul className={`transition divide-y-2 md:divide-y-0 duration-500 ease-in-out font-medium flex flex-col p-4 md:p-0 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 ${isScrolled ? 'md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700' : "bg-inherit"}`}>
+      <ul className={`items-center transition divide-y-2 md:divide-y-0 duration-500 ease-in-out font-medium flex flex-col p-4 md:p-0 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 ${isScrolled ? 'md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700' : "bg-inherit"}`}>
       <li>
           <span className="flex items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none" aria-current="page"><DarkModeBtn></DarkModeBtn></span>
         </li>
+        {/* HOME */}
         {/* <li>
           <Link href="/" className="flex items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none" aria-current="page">{ HomeRoundedIcon} Home</Link>
         </li> */}
@@ -58,11 +62,15 @@ const Navbar = () => {
         <li>
           <Link href="/internships" className="flex items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none" aria-current="page">{ WorkRoundedIcon} Internships</Link>
         </li>
-        <li>
+        {/* CONTACT */}
+        {/* <li>
           <Link href="/contact" className="flex items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none">{PhoneRoundedIcon} Contact</Link>
-        </li>
+        </li> */}
         <li>
           <Link href="/blogs" className="flex items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none">{CreateRoundedIcon} Blogs</Link>
+        </li>
+        <li>
+        <button onClick={() => setLoginClicked(!isLoginClicked)} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Login</button>
         </li>
 
       </ul>
@@ -96,9 +104,9 @@ const Navbar = () => {
         <li>
           <Link href="/blogs" className="flex items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none">{CreateRoundedIcon} Blogs</Link>
         </li>
-
       </ul>
     </div>
+    {isLoginClicked && <Loginform></Loginform>}
     </>
   )
 }
