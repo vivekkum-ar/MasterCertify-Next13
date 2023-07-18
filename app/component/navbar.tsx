@@ -13,6 +13,8 @@ const poppins = Poppins({
   });
 
 const Navbar = () => {
+let count:Number = 1;
+
 
 /* ---------------------- Collapse / Reopen Mobile Menu --------------------- */
   const [isMenuClicked, setIsMobMenu] = useState(true);
@@ -20,6 +22,13 @@ const Navbar = () => {
 /* ------------------------- View Loginform on click ------------------------ */
   const [isLoginClicked, setLoginClicked] = useState(false);
 
+/* -------------- Handle SetLoginClick after firstSetLoginClick ------------- */
+  function handleSetLoginClicked() {
+    setLoginClicked(false);
+    setTimeout(() => {
+          setLoginClicked(true);
+        }, 100);
+      }
 /* ----------------- Background fade Nav effect starts here ----------------- */
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -70,7 +79,7 @@ const Navbar = () => {
           <Link href="/blogs" className="flex items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none">{CreateRoundedIcon} Blogs</Link>
         </li>
         <li>
-        <button onClick={() => setLoginClicked(!isLoginClicked)} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Login</button>
+        <button onClick={() => (isLoginClicked == false) && (count == 1) ? setLoginClicked(true) : handleSetLoginClicked()} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Login</button>
         </li>
 
       </ul>
