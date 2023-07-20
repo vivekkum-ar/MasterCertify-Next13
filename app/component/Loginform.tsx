@@ -1,16 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { Poppins } from "next/font/google";
+import "animate.css";
+import { gsap } from 'gsap';
 
 const poppins = Poppins({
     subsets: ['latin'],
     weight: ['200','400','600','800','900'],
   });
 
+  
+
 interface LoginformProps {
   // Add your prop types here
 }
 
 const Loginform: React.FC<LoginformProps> = ({}) => {
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      let mm = gsap.matchMedia();
+      // add a media query. When it matches, the associated function will run
+  mm.add("(min-width: 768px)", () => {
+      // all your GSAP animation code here
+      gsap.from(".bounceInDown", {
+        y: "-200%",
+        opacity: 0,
+        duration: 1,
+        ease: "power2.inOut",
+      });
+  });
+});
+});
+
 
     /* --------------------- Track visibility of login form --------------------- */
     const [isVisible,setIsVisible] = useState(true);
@@ -32,10 +53,10 @@ const Loginform: React.FC<LoginformProps> = ({}) => {
         {/* -------------------------------------------------------------------------- */
       /*                                 MAIN MODAL                                 */
       /* -------------------------------------------------------------------------- */}
-      <div id="authentication-modal" tabIndex={-1} aria-hidden="true" className={`grid fixed z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full ${(isVisible == true) ? "block" : "hidden"} backdrop-blur-lg bg-opacity-50 backdrop-filter border border-opacity-20 border-white dark:border-gray-600 dark:bg-gray-700 rounded-lg shadow`}>
+      <div id="authentication-modal" tabIndex={-1} aria-hidden="true" className={`grid fixed z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 md:h-100 h-screen max-h-full ${(isVisible == true) ? "block" : "hidden"} backdrop-blur-lg bg-opacity-50 backdrop-filter border border-opacity-20 border-white bounceInDown`}>
         <div className="relative w-full max-w-md max-h-full justify-self-center self-center">
           {/* Modal content */}
-          <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 shadow-gray-950">
             <button onClick={() => setIsVisible(false) } type="button" className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
               <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
@@ -51,8 +72,8 @@ const Loginform: React.FC<LoginformProps> = ({}) => {
                    {/* -------------------------------------------------------------------------- */
                   /*                               Error messages                               */
                   /* --------------------------------------------------------------------------  */}
-                  <p className="mt-2 text-sm text-green-600 dark:text-green-500 peer-valid:block peer-invalid:hidden"><span className="font-medium">Well done!</span> Some success message.</p>
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-500 peer-valid:hidden peer-invalid:block"><span className="font-medium">Oh, snapp!</span> Some error message.</p>
+                  <p className="mt-2 text-sm text-green-600 dark:text-green-500 peer-valid:block peer-invalid:hidden peer-placeholder-shown:!hidden"><span className="font-medium">Well done!</span> Some success message.</p>
+                  <p className="mt-2 text-sm text-red-600 dark:text-red-500 peer-valid:hidden peer-invalid:block peer-placeholder-shown:!hidden"><span className="font-medium">Oh, snapp!</span> Some error message.</p>
                 </div>
                 <div>
                   <label htmlFor="password" className={`after:content-['*'] after:text-red-500 after:ms-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white ${poppins.className}`}>Your password</label>
@@ -60,8 +81,8 @@ const Loginform: React.FC<LoginformProps> = ({}) => {
                    {/* -------------------------------------------------------------------------- */
                   /*                               Error messages                               */
                   /* --------------------------------------------------------------------------  */}
-                  <p className="mt-2 text-sm text-green-600 dark:text-green-500 peer-valid:block peer-invalid:hidden"><span className="font-medium">Well done!</span> Some success message.</p>
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-500 peer-valid:hidden peer-invalid:block"><span className="font-medium">Oh, snapp!</span> Some error message.</p>
+                  <p className="mt-2 text-sm text-green-600 dark:text-green-500 peer-valid:block peer-invalid:hidden peer-placeholder-shown:!hidden"><span className="font-medium">Well done!</span> Some success message.</p>
+                  <p className="mt-2 text-sm text-red-600 dark:text-red-500 peer-valid:hidden peer-invalid:block peer-placeholder-shown:!hidden"><span className="font-medium">Oh, snapp!</span> Some error message.</p>
                 </div>
                 <div className="flex justify-between">
                   <div className="flex items-start">
