@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { HomeRoundedIcon, SchoolRoundedIcon, CreateRoundedIcon, WorkRoundedIcon, PhoneRoundedIcon, DarkModeIcon, LightModeIcon } from './iconify';
 import { DarkModeBtn } from '../DarkMode';
 import Loginform from './Loginform';
+import Signupform from './Signupform';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -13,8 +14,15 @@ const poppins = Poppins({
   });
 
 const Navbar = () => {
-let count:Number = 1;
+/* -------------------------------------------------------------------------- */
+/*                               for signupform                               */
+/* -------------------------------------------------------------------------- */
 
+
+/* -------------------------------------------------------------------------- */
+/*                                for Loginform                               */
+/* -------------------------------------------------------------------------- */
+let count:Number = 1;
 
 /* ---------------------- Collapse / Reopen Mobile Menu --------------------- */
   const [isMenuClicked, setIsMobMenu] = useState(true);
@@ -117,6 +125,7 @@ let count:Number = 1;
       </ul>
     </div>
     {isLoginClicked && <Loginform></Loginform>}
+    {/* {isSignupClicked && <Signupform></Signupform>} */}
     </>
   )
 }
