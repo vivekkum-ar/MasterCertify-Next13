@@ -731,3 +731,17 @@ ul.tags {
   padding-right:5px;
   /*    background:#323A45;*/
 }
+
+
+@keyframes fadeOut_2s {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-fadeOut_2s {
+  animation: fadeOut_2s 2s ease-in-out infinite;
+}
