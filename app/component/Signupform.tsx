@@ -1,6 +1,8 @@
 "use Client"
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { Poppins } from "next/font/google";
+import { useRouter } from 'next/navigation';
+import { Console } from 'console';
 // import { postHandler } from '../api/register/route';
 
 const poppins = Poppins({
@@ -22,39 +24,60 @@ const Signupform: React.FC<SignupformProps> = ({updateParentState, handleLoginSw
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [Error, setError] = useState("");
-  
+  const router = useRouter();
+
   const handleSubmit = async(e:any) =>{
     e.preventDefault();
     if(!Name || !Email || !Password){
       setError("All fields are necessary.");
     }
-    try {
-      const res = await fetch("api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Name,
-          Email,
-          Password,
-        }),
-      });
-      
-      if(res.ok){
-        console.log("User Regged");
+    else{
+      try {
+
+        const resUserExists = await fetch("api/userExists", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ Email })
+        });
+  
+        const { user } = await resUserExists.json();
+  
+        if (user) {
+          setError("User already exists.");
+          return;
+        }
+  
+  
+        const res = await fetch("api/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Name,
+            Email,
+            Password,
+          }),
+        });
         
-        // const form = e.currentTarget;
-        // form.reset();
+        if(res.ok){
+          console.log("User Regged");
+          
+          // const form = e.currentTarget;
+          // form.reset();
+          handleCloseClick();
+          router.push("/"); 
+        }
+        else{
+          console.log(Name,Email,Password);
+          console.log("User Reg Failed");
+        }
+        }
+      catch (error) {
+        console.log("ERROR User Reg",error);
       }
-      else{
-        console.log(Name,Email,Password);
-        console.log("User Reg Failed");
-      }
-      }
-    catch (error) {
-      console.log("ERROR User Reg",error);
-      
     }
   }
 
@@ -98,7 +121,7 @@ const Signupform: React.FC<SignupformProps> = ({updateParentState, handleLoginSw
               </svg>
             </button>
           </div>}
-              <form className="space-y-6" action="#">
+              <form className="space-y-6">
               <div>
                   <label htmlFor="name" className={`after:content-['*'] after:text-red-500 after:ms-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white ${poppins.className}`}>Your name</label>
                   <input onChange={(e) => setName(e.target.value)} type="text" name="name" id="name" className="peer invalid:border-red-500 border-2 bg-gray-50 border valid:border-green-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name" required />
@@ -110,7 +133,8 @@ const Signupform: React.FC<SignupformProps> = ({updateParentState, handleLoginSw
                 </div>
                 <div>
                   <label htmlFor="email" className={`after:content-['*'] after:text-red-500 after:ms-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white ${poppins.className}`}>Your email</label>
-                  <input onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="peer invalid:border-red-500 border-2 bg-gray-50 border valid:border-green-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required />
+                  <input onChange={(e) => {setEmail(e.target.value);
+                  console.log(Email)}} type="email" name="email" id="email" className="peer invalid:border-red-500 border-2 bg-gray-50 border valid:border-green-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required />
                    {/* -------------------------------------------------------------------------- */
                   /*                               Error messages                               */
                   /* --------------------------------------------------------------------------  */}
@@ -126,7 +150,7 @@ const Signupform: React.FC<SignupformProps> = ({updateParentState, handleLoginSw
                   <p className="mt-2 text-sm text-green-600 dark:text-green-500 peer-valid:block peer-invalid:hidden peer-placeholder-shown:!hidden"><span className="font-medium">Well done!</span> Some success message.</p>
                   <p className="mt-2 text-sm text-red-600 dark:text-red-500 peer-valid:hidden peer-invalid:block peer-placeholder-shown:!hidden"><span className="font-medium">Oh, snapp!</span> Some error message.</p>
                 </div>
-                <button type="submit" onClick={handleSubmit} className={`w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ${poppins.className}`}>Signup to your account</button>
+                <button onClick={handleSubmit} className={`w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ${poppins.className}`}>Signup to your account</button>
                 <div className={`text-sm font-medium text-gray-500 dark:text-gray-300 ${poppins.className}`}>
                   Already have an account? <a href="#" onClick={() => handleSwitchToLogin()} className={`text-blue-700 hover:underline dark:text-blue-500 ${poppins.className} `}>Login</a>
                 </div>
