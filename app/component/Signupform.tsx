@@ -23,7 +23,7 @@ const Signupform: React.FC<SignupformProps> = ({updateParentState, handleLoginSw
   const [Password, setPassword] = useState("");
   const [Error, setError] = useState("");
   
-  const handleSubmit = async(e: React.MouseEvent<HTMLButtonElement>) =>{
+  const handleSubmit = async(e:any) =>{
     e.preventDefault();
     if(!Name || !Email || !Password){
       setError("All fields are necessary.");
@@ -32,20 +32,25 @@ const Signupform: React.FC<SignupformProps> = ({updateParentState, handleLoginSw
       const res = await fetch("api/register", {
         method: "POST",
         headers: {
-          "Content-type": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          Name,Email,Password,
+          Name,
+          Email,
+          Password,
         }),
       });
-
+      
       if(res.ok){
-        const form = e.currentTarget;
+        console.log("User Regged");
+        
+        // const form = e.currentTarget;
         // form.reset();
       }
       else{
+        console.log(Name,Email,Password);
         console.log("User Reg Failed");
-        }
+      }
       }
     catch (error) {
       console.log("ERROR User Reg",error);
