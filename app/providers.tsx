@@ -1,7 +1,7 @@
 "use client";
 import { ThemeProvider } from "next-themes";
 
-type Props = {};
+// type Props = {};
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
 	return (
