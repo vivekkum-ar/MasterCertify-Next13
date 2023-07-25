@@ -8,7 +8,7 @@ import Navbar from "./component/navbar";
 import Head from "next/head";
 import { Providers } from './providers';
 import Footer from "./component/footer";
-import { AuthProviders } from "@/Providers";
+import { AuthProviders } from "@/AuthProviders";
 
 
 /* -------------------------- Font poppins setting -------------------------- */

@@ -6,8 +6,7 @@ import { signOut, useSession } from 'next-auth/react'
 const Dashboard = () => {
 
   const { data: session } = useSession();
-  console.log("name",session);
-  console.log("email",session?.user?.email);
+  // console.log("name",session);
   return (
 <div className='grid place-items-center h-screen'>Dashboard
         <div className="shadow-lg p-8 bg-zinc-300/10 flex flex-col gap-2 my-6">
