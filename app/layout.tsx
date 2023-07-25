@@ -9,6 +9,7 @@ import Head from "next/head";
 import { Providers } from './providers';
 import Footer from "./component/footer";
 import { AuthProviders } from "@/AuthProviders";
+import NavBm from "@/app/component/nav"
 
 
 /* -------------------------- Font poppins setting -------------------------- */
@@ -41,6 +42,7 @@ export default function RootLayout({
             <Navbar></Navbar>
             {children}
             <Footer></Footer>
+            <NavBm></NavBm>
           </Providers>
         </AuthProviders>
       </body>
