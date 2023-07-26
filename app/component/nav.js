@@ -34,7 +34,7 @@ const NavBm = () => {
   }, []); // The empty dependency array makes this code run only once after initial rendering
 
   return (
-    <div className='NavBm-container'>
+    <div className='NavBm-container z-50'>
         <ul className="NavBm sm:w-fit w-screen">
           <span className="NavBm-indicator" />
           <li>
