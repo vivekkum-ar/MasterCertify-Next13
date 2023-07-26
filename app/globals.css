@@ -768,6 +768,7 @@ ul.tags {
   position: fixed;
   bottom: 0;
   justify-content: center;
+  border-radius: 20px 20px 0px 0px;
 }
 
 .NavBm {
@@ -785,7 +786,7 @@ ul.tags {
   text-decoration: none;
   color: var(--color-NavBm);
   width: 80px;
-  height: 90%;
+  height: 95%;
   display: inline-grid;
   place-items: center;
   font-size: 30px;
@@ -804,7 +805,7 @@ ul.tags {
 
 .NavBm li a.NavBm-item-active {
   color: var(--color-NavBm-active);
-  transform: translateY(-20%);
+  transform: translateY(-40%);
   font-size: 45px;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -821,7 +822,8 @@ ul.tags {
   background-color: var(--bg-NavBm);
   position: absolute;
   top: -35px;
-  left: calc(300px - 45px);
+  /* left: calc(300px - 45px); */
+  left: calc(5px);
   z-index: -1;
   transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   /* cubic-bezier(0.175, 0.885, 0.32, 1.275) */
