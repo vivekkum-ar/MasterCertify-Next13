@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { Poppins } from "next/font/google";
 import Link from 'next/link';
-import { HomeRoundedIcon, SchoolRoundedIcon, CreateRoundedIcon, WorkRoundedIcon, PhoneRoundedIcon, DarkModeIcon, LightModeIcon } from './iconify';
+import { HomeRoundedIcon, SchoolRoundedIcon, CreateRoundedIcon, WorkRoundedIcon, PhoneRoundedIcon} from './iconify';
 import { DarkModeBtn } from '../DarkMode';
 import Loginform from './Loginform';
 import { useSession } from 'next-auth/react';
@@ -102,13 +102,12 @@ let count:Number = 1;
           /* -------------------------------------------------------------------------- */}
             <div className='block md:hidden inline-flex'>
           <span className="inline-flex items-center p-0 text-sm text-gray-500 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:focus:ring-gray-600" aria-current="page"><DarkModeBtn></DarkModeBtn></span>
-            <button data-collapse-toggle="navbar-sticky" onClick={() => isMenuClicked == true ? setIsMobMenu(false):setIsMobMenu(true)} type="button" className="inline-flex items-center p-2 text-xl text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+            {/* <button data-collapse-toggle="navbar-sticky" onClick={() => isMenuClicked == true ? setIsMobMenu(false):setIsMobMenu(true)} type="button" className="inline-flex items-center p-2 text-xl text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
               <span className="sr-only">Open main menu</span>
-              {/* <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" /></svg> */}
+              <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" /></svg>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><circle cx="8" cy="2.5" r=".75"/><circle cx="8" cy="8" r=".75"/><circle cx="8" cy="13.5" r=".75"/></g></svg>
-            </button>
-            {session?.user?.email == "" || session?.user?.email == undefined ? <button onClick={() => (isLoginClicked == false) && (count == 1) ? setLoginClicked(true) : handleSetLoginClicked()} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-0 my-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Login</button>
-            : "" }
+            </button> */}
+            {session?.user?.email == "" || session?.user?.email == undefined ? <button onClick={() => (isLoginClicked == false) && (count == 1) ? setLoginClicked(true) : handleSetLoginClicked()} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className="mx-2 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-0 my-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><svg xmlns="http://www.w3.org/2000/svg" className="mx-1" width="18" height="18" viewBox="0 0 24 24"><g fill="currentColor"><path fill-rule="evenodd" d="M1.625 12c0 .414.336.75.75.75h10.973l-1.961 1.68a.75.75 0 1 0 .976 1.14l3.5-3a.75.75 0 0 0 0-1.14l-3.5-3a.75.75 0 1 0-.976 1.14l1.96 1.68H2.376a.75.75 0 0 0-.75.75Z" clip-rule="evenodd"/><path d="M9.375 9.75h.378a2.25 2.25 0 0 1 3.586-2.458l3.5 3a2.25 2.25 0 0 1 0 3.416l-3.5 3a2.25 2.25 0 0 1-3.586-2.458h-.378V16c0 2.828 0 4.243.879 5.121c.878.879 2.293.879 5.121.879h1c2.828 0 4.243 0 5.121-.879c.879-.878.879-2.293.879-5.121V8c0-2.828 0-4.243-.879-5.121C20.618 2 19.203 2 16.375 2h-1c-2.828 0-4.243 0-5.121.879c-.879.878-.879 2.293-.879 5.121v1.75Z"/></g></svg><span className={`text-xs font-normal ${poppins.className}`}>Login</span></button> : "" } 
             </div>
         </div>
       </nav>
