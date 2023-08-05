@@ -44,37 +44,37 @@ export default function Scrollcard() {
   //   <PostPreview key={post.slug} {...post} />
   // ));
 
-  // useLayoutEffect(() => {
-  //   let ctx = gsap.context(() => {
-  //     let mm = gsap.matchMedia();
-  //     // add a media query. When it matches, the associated function will run
-  // mm.add("(min-width: 768px)", () => {
-  //     // all your GSAP animation code here
-  //     gsap.to(".card-woman", {
-  //       scrollTrigger: {
-  //         trigger: ".card-1",
-  //         start: "top-=0.5% top",
-  //         end: "bottom+=500% 100%",
-  //         toggleActions: "play none none none",
-  //         scrub: 2,
-  //         // anticipatePin: 1,
-  //         pin:true,
-  //         pinSpacing:"-=40%",
-  //         markers: true,
-  //       },
-  //       y: -2000,
-  //       // x: -1000,
-  //       stagger:{ 
-  //         amount: 0.2,
-  //         from: "end",
-  //       }, // 0.1 seconds between when each ".box" element starts animating
-  //       // scrub: true,
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      let mm = gsap.matchMedia();
+      // add a media query. When it matches, the associated function will run
+  mm.add("(min-width: 768px)", () => {
+      // all your GSAP animation code here
+      gsap.to(".card-woman", {
+        scrollTrigger: {
+          trigger: ".card-1",
+          start: "top-=0.5% top",
+          end: "bottom+=500% 100%",
+          toggleActions: "play none none none",
+          scrub: 2,
+          // anticipatePin: 1,
+          pin:true,
+          pinSpacing:"-=40%",
+          markers: true,
+        },
+        y: -2000,
+        // x: -1000,
+        stagger:{ 
+          amount: 0.2,
+          from: "end",
+        }, // 0.1 seconds between when each ".box" element starts animating
+        // scrub: true,
         
-  //     });
-  //   });
-  //   return () => ctx.revert(); // <- cleanup!
-  // });
-  // }, []);
+      });
+    });
+    return () => ctx.revert(); // <- cleanup!
+  });
+  }, []);
 
   return (
     <>
