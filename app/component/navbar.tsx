@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { HomeRoundedIcon, SchoolRoundedIcon, CreateRoundedIcon, WorkRoundedIcon, PhoneRoundedIcon} from './iconify';
 import { DarkModeBtn } from '../DarkMode';
 import Loginform from './Loginform';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 // import { redirect } from 'next/navigation';
 
 
@@ -96,7 +96,7 @@ const [isDropdownvisible, setDropdownvisible] = useState(false)
         {/* <li>
         <button onClick={() => (isLoginClicked == false) && (count == 1) ? setLoginClicked(true) : handleSetLoginClicked()} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Login</button>
         </li> */}
-        <li>
+        {session?.user?.email == "" || session?.user?.email == undefined ? "" : <li>
         <div className="flex items-center md:order-2">
             <button type="button" onClick={() => {setDropdownvisible(!isDropdownvisible);}} className="flex mr-3 z-60 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
               <span className="sr-only">Open user menu</span>
@@ -119,7 +119,7 @@ const [isDropdownvisible, setDropdownvisible] = useState(false)
                   <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
                 </li>
                 <li>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                  <a href="#" onClick={() => signOut()} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
                 </li>
               </ul>
             </div>
@@ -130,7 +130,7 @@ const [isDropdownvisible, setDropdownvisible] = useState(false)
               </svg>
             </button>
           </div>
-        </li>
+        </li> }
       </ul>
       
     </div>
