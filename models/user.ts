@@ -1,5 +1,7 @@
 import mongoose, { Schema, models } from "mongoose";
 
+const allowedRoles = ['ADMIN', 'USER']; // Define allowed roles
+
 const userSchema = new Schema(
   {
     Name: {
@@ -14,6 +16,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    Role: {
+      type: String,
+      default: 'USER',
+      enum: allowedRoles // Enforce allowed roles
+    }
   },
   { timestamps: true }
 );

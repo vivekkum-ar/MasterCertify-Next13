@@ -26,19 +26,29 @@ const authOptions = {
                     if(!passwordsMatch){
                         return null;
                     }
-                    console.log(user)
+                    console.log("route",user)
                     /* ---------------------------------- Logs ---------------------------------- */
+                    /* ------------------------ Role based authentication ----------------------- */
                     // {
-                    //     _id: new ObjectId("64f087064e5608bc7a979175"),
-                    //     Name: 'Vivek Kumar',
-                    //     Email: 'prasadvivek1999@gmail.com',
-                    //     Password: '$2a$10$futKUbzvCJh1Uy4XpA2X.eSlrE0msJ7ZQMysztnHNGIdpnLyJJ2WW',
-                    //     createdAt: 2023-08-31T12:26:46.254Z,
-                    //     updatedAt: 2023-08-31T12:26:46.254Z,
-                    //     __v: 0
+                        // Role: 'USER',
+                        // _id: new ObjectId("64f087064e5608bc7a979175"),
+                        // Name: 'Vivek Kumar',
+                        // Email: 'prasadvivek1999@gmail.com',
+                        // Password: '$2a$10$futKUbzvCJh1Uy4XpA2X.eSlrE0msJ7ZQMysztnHNGIdpnLyJJ2WW',
+                        // createdAt: 2023-08-31T12:26:46.254Z,
+                        // updatedAt: 2023-08-31T12:26:46.254Z,
+                        // __v: 0
+                    // }
+
+                    console.log("returned:" ,{ name: user.Name, email: user.Email, role: user.Role });
+
+                    /* --------------------------------- Outputs --------------------------------- */
+                    // returned: {
+                    //     name: 'Vivek Kumar',
+                    //     email: 'prasadvivek1999@gmail.com',
+                    //     role: 'USER'
                     //   }
-                    // return user;
-                    return { name: user.Name, email: user.Email };
+                    return { name: user.Name, email: user.Email, role: user.Role };
                 } catch (error) {
                      console.log("Error: ", "Route NEXT error", error);
                 }

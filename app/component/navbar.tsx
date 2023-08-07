@@ -19,7 +19,7 @@ const poppins = Poppins({
 const Navbar = () => {
 
   const { data: session } = useSession();
-  // console.log("navbar",session);
+  console.log("navbar",session);
 
   /* -------------------------------------------------------------------------- */
 /*                                for Loginform                               */
@@ -60,6 +60,7 @@ const [isDropdownvisible, setDropdownvisible] = useState(false)
     };
   }, []);
   /* ------------------ Background fade Nav effect ends here ------------------ */
+  
   return (
     <>  
 <nav className={`fixed w-full z-30 top-0 left-0 transition duration-500 ease-in-out ${isScrolled ? 'bg-white dark:bg-gray-900 border-b-2 border-gray-300 dark:border-gray-600' : 'bg-inherit'}`}>
@@ -96,6 +97,9 @@ const [isDropdownvisible, setDropdownvisible] = useState(false)
         {/* <li>
         <button onClick={() => (isLoginClicked == false) && (count == 1) ? setLoginClicked(true) : handleSetLoginClicked()} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Login</button>
         </li> */}
+        
+         {/* ----------------------- Profile button starts here -----------------------  */}
+
         {session?.user?.email == "" || session?.user?.email == undefined ? "" : <li>
         <div className="flex items-center md:order-2">
             <button type="button" onClick={() => {setDropdownvisible(!isDropdownvisible);}} className="flex mr-3 z-60 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
@@ -105,18 +109,20 @@ const [isDropdownvisible, setDropdownvisible] = useState(false)
             {/* Dropdown menu */}
             <div className={`absolute z-50 right-0 top-0 mt-14 me-2 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 ${isDropdownvisible ? "" : "hidden"}`} id="user-dropdown">
               <div className={`px-4 py-3 ${(session?.user?.email == undefined) || (session?.user?.email == "") ? "hidden" : ""}`}>
-                <span className="block text-sm text-gray-900 dark:text-white">{session?.user?.name}</span>
+                <span className="block text-sm text-gray-900 dark:text-white">{session.user.name} 
+                {/* {session?.user?.role == "USER" ? " (USER)" :""} */}
+                </span>  
                 <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">{session?.user?.email}</span>
               </div> 
               <ul className="py-2" aria-labelledby="user-menu-button">
                 <li>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                  <a href="/dashboard" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
                 </li>
                 <li>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+                  <a href="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profile</a>
                 </li>
                 <li>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+                  <a href="/settings" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
                 </li>
                 <li>
                   <a href="#" onClick={() => signOut()} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
@@ -131,6 +137,9 @@ const [isDropdownvisible, setDropdownvisible] = useState(false)
             </button>
           </div>
         </li> }
+
+         {/* ----------------------- Profile button ends here -----------------------  */}
+
       </ul>
       
     </div>

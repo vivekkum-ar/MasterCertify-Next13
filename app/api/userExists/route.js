@@ -7,7 +7,11 @@ export async function POST(req) {
     await connectMongoDB();
     const { Email } = await req.json();
     const user = await User.findOne({ Email }).select("_id");
-    console.log("user: ", user);
+
+    console.log("user-did-not-exist-before-if-null: ", user);
+    /* --------------------------------- Outputs -------------------------------- */
+    // user: null ------ it's null as the user should'nt exist before signup or it should'nt be duplicate
+
     return NextResponse.json({ user });
   } catch (error) {
     console.log(error);
