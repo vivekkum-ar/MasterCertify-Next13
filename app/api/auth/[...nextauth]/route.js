@@ -56,6 +56,75 @@ const authOptions = {
             }, 
         }),
     ],
+    callbacks:{
+        async jwt({token, user, session}){
+            console.log("jwt callback:" , {token,user,session});
+            return token;
+        },
+        async session({session,token,user}){
+            console.log("session callback:" , {session,token,user});       
+            return session;
+        }
+    },
+/* ----------------------------- CONSOLE OUTPUT ----------------------------- */
+
+//     Connected to MongoDB
+// route {
+//   _id: new ObjectId("650d6b96bd468d2ad9409c94"),
+//   Name: 'Vivek Kumar',
+//   Email: 'prasadvivek1999@gmail.com',
+//   Password: '$2a$10$FkZ5RI6xygjbFV4BmzEZbu7.XIm7PhPeB3fOCJ/kRrhb4joQZSZqm',  
+//   Role: 'USER',
+//   createdAt: 2023-09-22T10:25:26.063Z,
+//   updatedAt: 2023-09-22T10:25:26.063Z,
+//   __v: 0
+// }
+// returned: {
+//   name: 'Vivek Kumar',
+//   email: 'prasadvivek1999@gmail.com',
+//   role: 'USER'
+// }
+// jwt callback: {
+//   token: {
+//     name: 'Vivek Kumar',
+//     email: 'prasadvivek1999@gmail.com',
+//     picture: undefined,
+//     sub: undefined
+//   },
+//   user: {
+//     name: 'Vivek Kumar',
+//     email: 'prasadvivek1999@gmail.com',
+//     role: 'USER'
+//   },
+//   session: undefined
+// }
+// jwt callback: {
+//   token: {
+//     name: 'Vivek Kumar',
+//     email: 'prasadvivek1999@gmail.com',
+//     iat: 1695385938,
+//     exp: 1697977938,
+//     jti: '0bd7fe17-ffd9-465b-97a4-7ecb0a813e45'
+//   },
+//   user: undefined,
+//   session: undefined
+// }
+// session callback: {
+//   session: {
+//     user: {
+//       name: 'Vivek Kumar',
+//       email: 'prasadvivek1999@gmail.com',
+//       image: undefined
+//     },
+//     expires: '2023-10-22T12:32:18.671Z'
+//   },
+//     email: 'prasadvivek1999@gmail.com',
+//     iat: 1695385938,
+//     exp: 1697977938,
+//     jti: '0bd7fe17-ffd9-465b-97a4-7ecb0a813e45'
+//   },
+//   user: undefined
+// }
     session:{
         strategy: "jwt",
     },
