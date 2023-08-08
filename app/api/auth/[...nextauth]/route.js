@@ -5,7 +5,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 
     
-const authOptions = {
+export const authOptions = {
     providers: [
         CredentialsProvider({
             name: "credentials",
@@ -26,7 +26,7 @@ const authOptions = {
                     if(!passwordsMatch){
                         return null;
                     }
-                    console.log("route",user)
+                    console.log("route",user);
                     /* ---------------------------------- Logs ---------------------------------- */
                     /* ------------------------ Role based authentication ----------------------- */
                     // {
@@ -40,7 +40,7 @@ const authOptions = {
                         // __v: 0
                     // }
 
-                    console.log("returned:" ,{ name: user.Name, email: user.Email, role: user.Role });
+                    // console.log("returned:" ,{ name: user.Name, email: user.Email, role: user.Role });
 
                     /* --------------------------------- Outputs --------------------------------- */
                     // returned: {
@@ -48,11 +48,16 @@ const authOptions = {
                     //     email: 'prasadvivek1999@gmail.com',
                     //     role: 'USER'
                     //   }
-                    return { name: user.Name, email: user.Email, role: user.Role };
+
+                    /* -------------------- have to do use these so that i do ------------------- */
+                    /* ------------------ not need to convert them to lowercase ----------------- */
+                    user.name = user.Name;
+                    user.email = user.Email;
+                    return user;
                 } catch (error) {
                      console.log("Error: ", "Route NEXT error", error);
                 }
-                return user;
+                // return user;
             }, 
         }),
     ],
@@ -69,9 +74,21 @@ const authOptions = {
         },
         async session({session,token,user}){
             console.log("session callback:" , {session,token,user});       
-            return session;
+            return {
+              ...session,
+              user: {
+                ...session.user,
+                role: token.role,
+              },
+            };
         }
     },
+    /* ----------------------------- Updated object ----------------------------- */
+    // {
+    //     "name": "Vivek Kumar",
+    //     "email": "prasadvivek1999@gmail.com",
+    //     "role": "USER"
+    // }
     session:{
         strategy: "jwt",
     },
