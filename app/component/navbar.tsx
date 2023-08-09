@@ -75,6 +75,9 @@ const [isDropdownvisible, setDropdownvisible] = useState(false)
       <li>
           <span className="flex items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none" aria-current="page"><DarkModeBtn></DarkModeBtn></span>
         </li>
+         {/* ----------------------- Profile button starts here -----------------------  */}
+
+        
         {/* HOME */}
         {/* <li>
           <Link href="/" className="flex items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:bg-gray-100 md:focus:bg-transparent focus:text-blue-700 md:focus:text-blue-700 focus:outline-none" aria-current="page">{ HomeRoundedIcon} Home</Link>
@@ -145,7 +148,7 @@ const [isDropdownvisible, setDropdownvisible] = useState(false)
           {/*-------------------------------------------------------------------------- */
           /*                          Mobile menu toggle button                         */
           /* -------------------------------------------------------------------------- */}
-            <div className='block md:hidden inline-flex'>
+            <div className='block md:hidden inline-flex gap-2'>
           <span className="inline-flex items-center p-0 text-sm text-gray-500 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:focus:ring-gray-600" aria-current="page"><DarkModeBtn></DarkModeBtn></span>
             {/* <button data-collapse-toggle="navbar-sticky" onClick={() => isMenuClicked == true ? setIsMobMenu(false):setIsMobMenu(true)} type="button" className="inline-flex items-center p-2 text-xl text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
               <span className="sr-only">Open main menu</span>
@@ -153,7 +156,40 @@ const [isDropdownvisible, setDropdownvisible] = useState(false)
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><circle cx="8" cy="2.5" r=".75"/><circle cx="8" cy="8" r=".75"/><circle cx="8" cy="13.5" r=".75"/></g></svg>
             </button> */}
             {session?.user?.email == "" || session?.user?.email == undefined ? <button onClick={() => (isLoginClicked == false) && (count == 1) ? setLoginClicked(true) : handleSetLoginClicked()} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className="h-[9] mx-2 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-0 my-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><svg xmlns="http://www.w3.org/2000/svg" className="mx-1" width="18" height="18" viewBox="0 0 24 24"><g fill="currentColor"><path fill-rule="evenodd" d="M1.625 12c0 .414.336.75.75.75h10.973l-1.961 1.68a.75.75 0 1 0 .976 1.14l3.5-3a.75.75 0 0 0 0-1.14l-3.5-3a.75.75 0 1 0-.976 1.14l1.96 1.68H2.376a.75.75 0 0 0-.75.75Z" clip-rule="evenodd"/><path d="M9.375 9.75h.378a2.25 2.25 0 0 1 3.586-2.458l3.5 3a2.25 2.25 0 0 1 0 3.416l-3.5 3a2.25 2.25 0 0 1-3.586-2.458h-.378V16c0 2.828 0 4.243.879 5.121c.878.879 2.293.879 5.121.879h1c2.828 0 4.243 0 5.121-.879c.879-.878.879-2.293.879-5.121V8c0-2.828 0-4.243-.879-5.121C20.618 2 19.203 2 16.375 2h-1c-2.828 0-4.243 0-5.121.879c-.879.878-.879 2.293-.879 5.121v1.75Z"/></g></svg><span className={`text-xs font-normal ${poppins.className}`}>Login</span></button> : "" } 
+
+            {/* ----------------------- Profile button starts here -----------------------  */}
+            {session?.user?.email == "" || session?.user?.email == undefined ? "" : <div className="flex items-center md:order-2">
+            <button type="button" onClick={() => {setDropdownvisible(!isDropdownvisible);}} className="flex mr-3 z-60 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+              <span className="sr-only">Open user menu</span>
+              <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo" />
+            </button>
+            {/* Dropdown menu */}
+            <div className={`absolute z-50 right-0 top-0 mt-14 me-2 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 ${isDropdownvisible ? "" : "hidden"}`} id="user-dropdown">
+              <div className={`px-4 py-3 ${(session?.user?.email == undefined) || (session?.user?.email == "") ? "hidden" : ""}`}>
+                <span className="flex text-sm text-gray-900 dark:text-white gap-2">{session.user.name}{session?.user?.role == "USER" ? <Keyword dictionary={["USER"]} btncolor={4}></Keyword> :""} </span>  
+                <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">{session?.user?.email}</span>
+              </div> 
+              <ul className="py-2" aria-labelledby="user-menu-button">
+                <li>
+                  <a href="/dashboard" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                </li>
+                <li>
+                  <a href="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profile</a>
+                </li>
+                <li>
+                  <a href="/settings" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+                </li>
+                <li>
+                  <a href="#" onClick={() => signOut()} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                </li>
+              </ul>
             </div>
+            
+          </div> }
+          {/* ----------------------- Profile button starts here -----------------------  */}
+          
+            </div>
+            
         </div>
       </nav>
       <div className={`dark:bg-gray-700 fixed z-20 top-16 rounded-xl w-full md:w-auto bg-white animate__animated md:w-auto ${isMenuClicked == true ? "hidden animate__fadeOutUp" : "animate__fadeInDown"}`} id="navbar-default">
