@@ -11,10 +11,10 @@ const buttonClassNames = [
     "text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-full text-xs px-2 py-0.5 text-center mr-1 mb-0.5",
     // Add more class names here if needed
   ];
-const applyClassNamesToButtons = (dictionary: string[]) => {
+const applyClassNamesToButtons = (dictionary: string[],btncolor :number) => {
     // Generate a random number between 0 (inclusive) and max (exclusive)
   return dictionary.map((akey, index) => (
-    <button key={index} className={buttonClassNames[Math.floor(Math.random() * buttonClassNames.length)]} type="button">
+    <button key={index} className={buttonClassNames[btncolor == 0 ? Math.floor(Math.random() * buttonClassNames.length) : btncolor]} type="button">
       {/* Content for the button */}
       {akey}
     </button>
@@ -22,14 +22,15 @@ const applyClassNamesToButtons = (dictionary: string[]) => {
 };
 
 interface KeywordComponentProps{
-    dictionary: string[];  //Optional prop using ?
+    dictionary: string[];  //Optional prop using ? like dictionary?: string[];
+    btncolor?: number;
   }
 
-const Keyword: React.FC<KeywordComponentProps> = ({dictionary = []}) => {
+const Keyword: React.FC<KeywordComponentProps> = ({dictionary = [],btncolor=0}) => {
 
   return (
     <div className="md:max-w-md max-w-xs">
-      {applyClassNamesToButtons(dictionary)}
+      {applyClassNamesToButtons(dictionary,btncolor)}
     </div>
   );
 };

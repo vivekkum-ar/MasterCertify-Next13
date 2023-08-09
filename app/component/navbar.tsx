@@ -7,6 +7,7 @@ import { HomeRoundedIcon, SchoolRoundedIcon, CreateRoundedIcon, WorkRoundedIcon,
 import { DarkModeBtn } from '../DarkMode';
 import Loginform from './Loginform';
 import { signOut, useSession } from 'next-auth/react';
+import Keyword from './keywords';
 // import { redirect } from 'next/navigation';
 
 
@@ -109,9 +110,7 @@ const [isDropdownvisible, setDropdownvisible] = useState(false)
             {/* Dropdown menu */}
             <div className={`absolute z-50 right-0 top-0 mt-14 me-2 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 ${isDropdownvisible ? "" : "hidden"}`} id="user-dropdown">
               <div className={`px-4 py-3 ${(session?.user?.email == undefined) || (session?.user?.email == "") ? "hidden" : ""}`}>
-                <span className="block text-sm text-gray-900 dark:text-white">{session.user.role} 
-                {/* {session?.user?.role == "USER" ? " (USER)" :""} */}
-                </span>  
+                <span className="flex text-sm text-gray-900 dark:text-white gap-2">{session.user.name}{session?.user?.role == "USER" ? <Keyword dictionary={["USER"]} btncolor={4}></Keyword> :""} </span>  
                 <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">{session?.user?.email}</span>
               </div> 
               <ul className="py-2" aria-labelledby="user-menu-button">
